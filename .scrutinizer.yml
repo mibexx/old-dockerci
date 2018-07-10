@@ -15,7 +15,7 @@ build:
       - 'vendor/bin/xervice da:ge'
     override:
       -
-        command: 'vendor/bin/codecept --coverage --coverage-xml'
+        command: 'vendor/bin/codecept run --coverage --coverage-xml'
         coverage:
           file: 'tests/_output/coverage.xml'
           format: 'clover'
