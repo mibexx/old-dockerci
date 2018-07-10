@@ -11,6 +11,8 @@ build:
 
 
   tests:
+    before:
+      - 'vendor/bin/xervice da:ge'
     override:
       -
         command: 'vendor/bin/codecept --coverage --coverage-xml'
