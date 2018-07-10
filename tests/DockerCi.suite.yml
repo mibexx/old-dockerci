@@ -1,0 +1,4 @@
+actor: DockerCiTester
+modules:
+    enabled:
+        - \DockerCiTest\Helper\DockerCi

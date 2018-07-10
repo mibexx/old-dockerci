@@ -1,0 +1,29 @@
+{
+  "name"             : "mibexx/dockerci",
+  "license"          : "MIT",
+  "authors"          : [
+    {
+      "name" : "Mike Bertram",
+      "email": "contact@mibexx.de"
+    }
+  ],
+  "require-dev": {
+    "xervice/development": "^0.1.0",
+    "codeception/codeception": "*",
+    "symfony/var-dumper": "*"
+  },
+  "require": {
+    "php": ">=7.1.0",
+    "xervice/data-provider": "^1.0.2",
+    "symfony/yaml": "^4.1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "DockerCiTest\\": "tests/DockerCi/",
+      "DataProvider\\": "src/Generated/"
+    },
+    "psr-0": {
+      "DockerCi\\": "src/"
+    }
+  }
+}
