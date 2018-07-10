@@ -21,7 +21,7 @@ class DockerConfigDependencyProvider extends AbstractProvider
      */
     public function handleDependencies(DependencyProviderInterface $container)
     {
-        $container[self::HYDRATOR_COLLECTION] = function(DependencyProviderInterface $container) {
+        $container[self::HYDRATOR_COLLECTION] = function() {
             return new HydratorCollection(
                 $this->getHydratorList()
             );
