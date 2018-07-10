@@ -14,14 +14,6 @@
         <DataElement name="Files" singleton="File" type="DockerConfigFile[]"/>
     </DataProvider>
 
-    <DataProvider name="DockerConfig">
-        <DataElement name="Environments" singleton="Environment" type="DockerConfigEnvironment[]"/>
-    </DataProvider>
-
-    <DataProvider name="DockerConfigEnvironment">
-        <DataElement name="Name" type="string"/>
-        <DataElement name="Type" type="string"/>
-        <DataElement name="Context" type="array"/>
-    </DataProvider>
+    <DataProvider name="DockerConfig"></DataProvider>
 
 </DataProviders>

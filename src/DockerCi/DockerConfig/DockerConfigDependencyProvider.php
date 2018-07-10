@@ -5,6 +5,7 @@ namespace DockerCi\DockerConfig;
 
 
 use DockerCi\DockerConfig\Business\Hydrator\HydratorCollection;
+use DockerCi\Environment\Business\Plugin\EnvironmentHydratorPlugin;
 use Xervice\Core\Dependency\DependencyProviderInterface;
 use Xervice\Core\Dependency\Provider\AbstractProvider;
 
@@ -32,6 +33,8 @@ class DockerConfigDependencyProvider extends AbstractProvider
      */
     protected function getHydratorList()
     {
-        return [];
+        return [
+            new EnvironmentHydratorPlugin()
+        ];
     }
 }
