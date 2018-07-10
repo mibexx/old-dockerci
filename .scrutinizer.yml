@@ -19,3 +19,11 @@ build:
         coverage:
           file: 'tests/_output/coverage.xml'
           format: 'clover'
+
+checks:
+    php: true
+coding_style:
+    php:
+        spaces:
+            around_operators:
+                concatenation: true
