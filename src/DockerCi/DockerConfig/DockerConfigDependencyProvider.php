@@ -28,7 +28,7 @@ class DockerConfigDependencyProvider extends AbstractProvider
     }
 
     /**
-     * @return array
+     * @return \DockerCi\DockerConfig\Business\Hydrator\HydratorInterface[]
      */
     protected function getHydratorList()
     {
