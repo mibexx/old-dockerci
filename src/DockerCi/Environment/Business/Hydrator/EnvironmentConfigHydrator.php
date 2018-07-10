@@ -37,17 +37,28 @@ class EnvironmentConfigHydrator
     public function hydrate(): DockerConfigDataProvider
     {
         foreach ($this->configData as $name => $data) {
-            $conf = new EnvironmentConfigDataProvider();
-            $conf->setName($name);
-            $conf->setType($data['type']);
-
-            unset($data['type']);
-
-            $conf->setContext($data);
-
+            $conf = $this->getEnvironmentConfigFromData($name, $data);
             $this->configDataProvider->addEnvironment($conf);
         }
 
         return $this->configDataProvider;
     }
+
+    /**
+     * @param $name
+     * @param $data
+     *
+     * @return \DataProvider\EnvironmentConfigDataProvider
+     */
+    private function getEnvironmentConfigFromData($name, $data): EnvironmentConfigDataProvider
+    {
+        $conf = new EnvironmentConfigDataProvider();
+        $conf->setName($name);
+        $conf->setType($data['type']);
+
+        unset($data['type']);
+
+        $conf->setContext($data);
+        return $conf;
+}
 }
