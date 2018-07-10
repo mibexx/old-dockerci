@@ -1,0 +1,19 @@
+filter:
+  paths:
+    - src/
+
+  excluded_paths:
+    - src/Generated
+
+build:
+  environment:
+    php: 7.1
+
+
+  tests:
+    override:
+      -
+        command: 'vendor/bin/codecept --coverage --coverage-xml'
+        coverage:
+          file: 'tests/_output/coverage.xml'
+          format: 'clover'
