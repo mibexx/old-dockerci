@@ -6,6 +6,8 @@ namespace DockerCi\Environment\Business\Hydrator;
 
 use DataProvider\DockerConfigDataProvider;
 use DataProvider\EnvironmentConfigDataProvider;
+use DockerCi\DockerConfig\Business\Exception\ConfigException;
+use DockerCi\Environment\Business\Exeption\EnvironmentConfigException;
 
 class EnvironmentConfigHydrator
 {
@@ -33,6 +35,7 @@ class EnvironmentConfigHydrator
 
     /**
      * @return \DataProvider\DockerConfigDataProvider
+     * @throws \DockerCi\DockerConfig\Business\Exception\ConfigException
      */
     public function hydrate(): DockerConfigDataProvider
     {
@@ -49,9 +52,19 @@ class EnvironmentConfigHydrator
      * @param $data
      *
      * @return \DataProvider\EnvironmentConfigDataProvider
+     * @throws \DockerCi\DockerConfig\Business\Exception\ConfigException
      */
     private function getEnvironmentConfigFromData($name, $data): EnvironmentConfigDataProvider
     {
+        if (!isset($data['type'])) {
+            throw new ConfigException(
+                sprintf(
+                    'Environment configuration for %s has no field type',
+                    $name
+                )
+            );
+        }
+
         $conf = new EnvironmentConfigDataProvider();
         $conf->setName($name);
         $conf->setType($data['type']);

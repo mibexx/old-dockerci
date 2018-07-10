@@ -1,19 +1,19 @@
 <?php
 
 
-namespace DockerCi\Environment\Business\Plugin;
+namespace DockerCi\Volume\Business\Plugin;
 
 
 use DataProvider\DockerConfigDataProvider;
 use DockerCi\DockerConfig\Business\Hydrator\HydratorInterface;
-use DockerCi\Environment\EnvironmentConfig;
+use DockerCi\Volume\VolumeConfig;
 use Xervice\Core\Locator\AbstractWithLocator;
 
 /**
- * @method \DockerCi\Environment\EnvironmentFacade getFacade()
- * @method \DockerCi\Environment\EnvironmentFactory getFactory()
+ * @method \DockerCi\Volume\VolumeFacade getFacade()
+ * @method \DockerCi\Volume\VolumeFactory getFactory()
  */
-class EnvironmentHydratorPlugin extends AbstractWithLocator implements HydratorInterface
+class VolumeHydratorPlugin extends AbstractWithLocator implements HydratorInterface
 {
     /**
      * @param array $data
@@ -21,13 +21,12 @@ class EnvironmentHydratorPlugin extends AbstractWithLocator implements HydratorI
      *
      * @return \DataProvider\DockerConfigDataProvider
      * @throws \Core\Locator\Dynamic\ServiceNotParseable
-     * @throws \DockerCi\DockerConfig\Business\Exception\ConfigException
      */
     public function hydrateConfig(array $data, DockerConfigDataProvider $dataProvider): DockerConfigDataProvider
     {
-        if (isset($data[EnvironmentConfig::CONFIG_IDENTIFIER])) {
-            $dataProvider = $this->getFactory()->getEnvironmentConfigHydrator(
-                $data[EnvironmentConfig::CONFIG_IDENTIFIER],
+        if (isset($data[VolumeConfig::CONFIG_IDENTIFIER])) {
+            $dataProvider = $this->getFactory()->getVolumeConfigHydrator(
+                $data[VolumeConfig::CONFIG_IDENTIFIER],
                 $dataProvider
             )->hydrate();
         }

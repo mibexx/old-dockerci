@@ -19,6 +19,7 @@ class DockerConfigFacade extends AbstractFacade
      * @param \DataProvider\DockerConfigFileListDataProvider $fileListDataProvider
      *
      * @return \DataProvider\DockerConfigDataProvider
+     * @throws \DockerCi\DockerConfig\Business\Exception\ConfigException
      */
     public function getDockerConfig(DockerConfigFileListDataProvider $fileListDataProvider): DockerConfigDataProvider
     {

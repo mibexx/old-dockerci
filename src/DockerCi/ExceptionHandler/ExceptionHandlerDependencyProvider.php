@@ -1,7 +1,7 @@
 <?php
 
 
-namespace DockerCi\Environment;
+namespace DockerCi\ExceptionHandler;
 
 
 use Xervice\Core\Dependency\DependencyProviderInterface;
@@ -10,7 +10,7 @@ use Xervice\Core\Dependency\Provider\AbstractProvider;
 /**
  * @method \Xervice\Core\Locator\Locator getLocator()
  */
-class EnvironmentDependencyProvider extends AbstractProvider
+class ExceptionHandlerDependencyProvider extends AbstractProvider
 {
     /**
      * @param \Xervice\Core\Dependency\DependencyProviderInterface $container

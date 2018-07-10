@@ -6,6 +6,7 @@ namespace DockerCi\DockerConfig\Business\Loader;
 
 use DataProvider\DockerConfigDataProvider;
 use DataProvider\DockerConfigFileListDataProvider;
+use DockerCi\DockerConfig\Business\Exception\ConfigException;
 use DockerCi\DockerConfig\Business\Hydrator\HydratorCollection;
 use DockerCi\DockerConfig\Business\Reader\ReaderInterface;
 
@@ -46,6 +47,7 @@ class ConfigLoader
 
     /**
      * @return \DataProvider\DockerConfigDataProvider
+     * @throws \DockerCi\DockerConfig\Business\Exception\ConfigException
      */
     public function getConfig(): DockerConfigDataProvider
     {
@@ -64,6 +66,7 @@ class ConfigLoader
      * @param $config
      *
      * @return \DataProvider\DockerConfigDataProvider
+     * @throws \DockerCi\DockerConfig\Business\Exception\ConfigException
      */
     private function hydrateConfigs($configData, $config): \DataProvider\DockerConfigDataProvider
     {

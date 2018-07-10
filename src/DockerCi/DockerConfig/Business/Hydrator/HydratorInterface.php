@@ -13,6 +13,7 @@ interface HydratorInterface
      * @param \DataProvider\DockerConfigDataProvider $dataProvider
      *
      * @return \DataProvider\DockerConfigDataProvider
+     * @throws \DockerCi\DockerConfig\Business\Exception\ConfigException
      */
     public function hydrateConfig(array $data, DockerConfigDataProvider $dataProvider): DockerConfigDataProvider;
 }
