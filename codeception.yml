@@ -13,4 +13,3 @@ coverage:
       - src/*
     exclude:
       - src/Generated/*
-      - *.xml
