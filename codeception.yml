@@ -13,3 +13,4 @@ coverage:
       - src/*
     exclude:
       - src/Generated/*
+      - */Schema/*
