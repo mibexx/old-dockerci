@@ -68,7 +68,7 @@ class ConfigLoader implements ConfigLoaderInterface
      * @return \DataProvider\DockerConfigDataProvider
      * @throws \DockerCi\DockerConfig\Business\Exception\ConfigException
      */
-    private function hydrateConfigs($configData, $config): \DataProvider\DockerConfigDataProvider
+    private function hydrateConfigs($configData, $config): DockerConfigDataProvider
     {
         foreach ($this->hydratorCollection as $hydrator) {
             $config = $hydrator->hydrateConfig($configData, $config);

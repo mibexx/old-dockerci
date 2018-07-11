@@ -1,0 +1,5 @@
+nodes:
+  test1:
+    redis: true
+  test2:
+    postgres: true
