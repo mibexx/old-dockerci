@@ -1,0 +1,8 @@
+nodes:
+  testNode:
+    php:
+      extension:
+        - intl
+        - curl
+      pecl:
+        - redis

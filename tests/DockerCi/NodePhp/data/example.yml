@@ -1,0 +1,9 @@
+nodes:
+  testNode:
+    php:
+      version: 7.1
+      extensions:
+        - intl
+        - curl
+      pecl:
+        - redis

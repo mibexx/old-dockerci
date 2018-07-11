@@ -4,6 +4,7 @@
 namespace DockerCi\Nodes;
 
 
+use DockerCi\NodePhp\Plugin\PhpNodeHydratorPlugin;
 use DockerCi\Nodes\Business\Hydrator\Collector\NodeHydratorCollection;
 use Xervice\Core\Dependency\DependencyProviderInterface;
 use Xervice\Core\Dependency\Provider\AbstractProvider;
@@ -32,6 +33,8 @@ class NodesDependencyProvider extends AbstractProvider
      */
     protected function getNodeHydratorList(): array
     {
-        return [];
+        return [
+            new PhpNodeHydratorPlugin()
+        ];
     }
 }
