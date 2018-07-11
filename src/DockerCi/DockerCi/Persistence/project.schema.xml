@@ -1,6 +1,6 @@
 <database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/propelorm/Propel2/master/resources/xsd/database.xsd"
-          namespace="Orm\Xervice\Database\Persistence"
+          namespace="Orm\Xervice\DockerCi\Persistence"
           name="default"
 >
 
@@ -9,10 +9,6 @@
         <column name="project_id" autoIncrement="true" required="true" primaryKey="true" type="INTEGER"/>
         <column name="name" type="VARCHAR"/>
         <column name="repository" type="VARCHAR"/>
-
-        <unique>
-            <unique-column name="project_id"/>
-        </unique>
     </table>
 
 

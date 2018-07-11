@@ -5,7 +5,7 @@ namespace DockerCi\DockerCi;
 
 
 use DockerCi\DockerCi\Business\Project\ProjectWriter;
-use Orm\Xervice\Database\Persistence\ProjectQuery;
+use Orm\Xervice\DockerCi\Persistence\ProjectQuery;
 use Xervice\Core\Factory\AbstractFactory;
 
 /**
@@ -24,7 +24,7 @@ class DockerCiFactory extends AbstractFactory
     }
     
     /**
-     * @return \Orm\Xervice\Database\Persistence\ProjectQuery
+     * @return \Orm\Xervice\DockerCi\Persistence\ProjectQuery
      */
     public function getProjectQuery()
     {

@@ -6,20 +6,20 @@ namespace DockerCi\DockerCi\Business\Project;
 
 use DataProvider\ProjectDataProvider;
 use DockerCi\DockerCi\Business\Project\Exception\ProjectException;
-use Orm\Xervice\Database\Persistence\Project;
-use Orm\Xervice\Database\Persistence\ProjectQuery;
+use Orm\Xervice\DockerCi\Persistence\Project;
+use Orm\Xervice\DockerCi\Persistence\ProjectQuery;
 
 class ProjectWriter
 {
     /**
-     * @var \Orm\Xervice\Database\Persistence\ProjectQuery
+     * @var \Orm\Xervice\DockerCi\Persistence\ProjectQuery
      */
     private $query;
 
     /**
      * AddProjectCommand constructor.
      *
-     * @param \Orm\Xervice\Database\Persistence\ProjectQuery $query
+     * @param \Orm\Xervice\DockerCi\Persistence\ProjectQuery $query
      */
     public function __construct(ProjectQuery $query)
     {

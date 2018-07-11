@@ -2,8 +2,9 @@
 namespace DockerCiTest\DockerCi;
 
 use DataProvider\ProjectDataProvider;
-use Orm\Xervice\Database\Persistence\ProjectQuery;
+use Orm\Xervice\DockerCi\Persistence\ProjectQuery;
 use Xervice\Core\Locator\Dynamic\DynamicLocator;
+use Xervice\Core\Locator\Locator;
 
 /**
  * @method \DockerCi\DockerCi\DockerCiFacade getFacade()
@@ -11,6 +12,15 @@ use Xervice\Core\Locator\Dynamic\DynamicLocator;
 class FacadeTest extends \Codeception\Test\Unit
 {
     use DynamicLocator;
+
+    /**
+     * @throws \Xervice\Config\Exception\ConfigNotFound
+     */
+    protected function _before()
+    {
+        Locator::getInstance()->database()->facade()->initDatabase();
+    }
+
 
     /**
      * @throws \Propel\Runtime\Exception\PropelException
@@ -50,7 +60,7 @@ class FacadeTest extends \Codeception\Test\Unit
     }
 
     /**
-     * @return \Orm\Xervice\Database\Persistence\ProjectQuery
+     * @return \Orm\Xervice\DockerCi\Persistence\ProjectQuery
      */
     private function getProjectQuery()
     {
