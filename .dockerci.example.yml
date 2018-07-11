@@ -1,0 +1,85 @@
+loadbalancer:
+  -
+    serverName: www.de.suite.local
+    target: spryker
+  -
+    serverName: zed.de.suite.local
+    target: spryker
+
+nodes:
+  spryker:
+    php:
+      version: 7.1
+      extensions:
+        - intl
+        - curl
+      pecl:
+        - redis
+
+    redis: true
+
+    postgres:
+      -
+        db: DE_development_zed
+        user: DE_development
+        pass: development
+
+    rabbitmq:
+      vhosts:
+        -
+          user: DE_development
+          password: development
+          vhost: /DE_development_zed
+
+    elasticsearch: 5
+
+    buildPath: /data/shop/development
+    rootPath: /data/shop/development/current
+
+    volumes:
+      -
+        name: projectdata
+        path: /data
+      -
+        name: dbdata
+        path: /postgres
+      -
+        name: redisdata
+        path: /redis
+      -
+        name: elasticsearch
+        path: /elasticsearch
+
+    nginx:
+      -
+        serverName: www.de.spryker.local
+        documentRoot: /data/shop/development/current/public/Yves
+        environment:
+          APPLICATION_STORE: DE
+          APPLICATION_ENV: development
+        rewrite:
+          -
+            from: "^(.*)$"
+            to: "/index.php last"
+      -
+        serverName: zed.de.spryker.local
+        documentRoot: /data/shop/development/current/public/Yves
+        environment:
+          APPLICATION_STORE: DE
+          APPLICATION_ENV: development
+
+    commands:
+      - vendor/bin/console data:import
+
+    tests:
+      before:
+        - vendor/bin/console transfer:generate
+      tests:
+        - vendor/bin/codecept run --coverage --coverage-xml
+      after:
+        - cp -rfp tests/_output/coverage.xml /coverage/clover.xml
+
+    authorizedKeys:
+      - <my_pub_key_if_i_want>
+
+

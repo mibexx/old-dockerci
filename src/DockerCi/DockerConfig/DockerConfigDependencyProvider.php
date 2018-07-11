@@ -6,6 +6,7 @@ namespace DockerCi\DockerConfig;
 
 use DockerCi\DockerConfig\Business\Hydrator\HydratorCollection;
 use DockerCi\Environment\Business\Plugin\EnvironmentHydratorPlugin;
+use DockerCi\Loadbalancer\Plugin\LoadbalancerDockerConfigPlugin;
 use DockerCi\Volume\Business\Plugin\VolumeHydratorPlugin;
 use Xervice\Core\Dependency\DependencyProviderInterface;
 use Xervice\Core\Dependency\Provider\AbstractProvider;
@@ -20,7 +21,7 @@ class DockerConfigDependencyProvider extends AbstractProvider
     /**
      * @param \Xervice\Core\Dependency\DependencyProviderInterface $container
      */
-    public function handleDependencies(DependencyProviderInterface $container)
+    public function handleDependencies(DependencyProviderInterface $container): void
     {
         $container[self::HYDRATOR_COLLECTION] = function() {
             return new HydratorCollection(
@@ -32,11 +33,10 @@ class DockerConfigDependencyProvider extends AbstractProvider
     /**
      * @return \DockerCi\DockerConfig\Business\Hydrator\HydratorInterface[]
      */
-    protected function getHydratorList()
+    protected function getHydratorList(): array
     {
         return [
-            new EnvironmentHydratorPlugin(),
-            new VolumeHydratorPlugin()
+            new LoadbalancerDockerConfigPlugin()
         ];
     }
 }

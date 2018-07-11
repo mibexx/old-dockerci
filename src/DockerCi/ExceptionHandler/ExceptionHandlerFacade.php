@@ -15,6 +15,8 @@ class ExceptionHandlerFacade extends AbstractFacade
 {
     /**
      * @param \Exception $exception
+     *
+     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     public function handleException(\Exception $exception): void
     {

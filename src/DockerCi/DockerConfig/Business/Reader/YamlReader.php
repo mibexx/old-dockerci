@@ -13,6 +13,7 @@ class YamlReader implements ReaderInterface
      * @param \DataProvider\DockerConfigFileDataProvider $dataProvider
      *
      * @return array
+     * @throws \Symfony\Component\Yaml\Exception\ParseException
      */
     public function getArrayFromFile(DockerConfigFileDataProvider $dataProvider): array
     {

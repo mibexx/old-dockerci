@@ -10,7 +10,7 @@ use DockerCi\DockerConfig\Business\Exception\ConfigException;
 use DockerCi\DockerConfig\Business\Hydrator\HydratorCollection;
 use DockerCi\DockerConfig\Business\Reader\ReaderInterface;
 
-class ConfigLoader
+class ConfigLoader implements ConfigLoaderInterface
 {
     /**
      * @var DockerConfigFileListDataProvider

@@ -5,7 +5,10 @@ namespace DockerCi\DockerConfig;
 
 
 use DataProvider\DockerConfigFileListDataProvider;
+use DockerCi\DockerConfig\Business\Hydrator\HydratorCollection;
 use DockerCi\DockerConfig\Business\Loader\ConfigLoader;
+use DockerCi\DockerConfig\Business\Loader\ConfigLoaderInterface;
+use DockerCi\DockerConfig\Business\Reader\ReaderInterface;
 use DockerCi\DockerConfig\Business\Reader\YamlReader;
 use Xervice\Core\Factory\AbstractFactory;
 
@@ -19,7 +22,7 @@ class DockerConfigFactory extends AbstractFactory
      *
      * @return \DockerCi\DockerConfig\Business\Loader\ConfigLoader
      */
-    public function createConfigLoader(DockerConfigFileListDataProvider $fileListDataProvider)
+    public function createConfigLoader(DockerConfigFileListDataProvider $fileListDataProvider): ConfigLoaderInterface
     {
         return new ConfigLoader(
             $fileListDataProvider,
@@ -31,7 +34,7 @@ class DockerConfigFactory extends AbstractFactory
     /**
      * @return \DockerCi\DockerConfig\Business\Reader\YamlReader
      */
-    public function createReader()
+    public function createReader(): ReaderInterface
     {
         return new YamlReader();
     }
@@ -39,7 +42,7 @@ class DockerConfigFactory extends AbstractFactory
     /**
      * @return \DockerCi\DockerConfig\Business\Hydrator\HydratorCollection
      */
-    public function getHydratorCollection()
+    public function getHydratorCollection(): HydratorCollection
     {
         return $this->getDependency(DockerConfigDependencyProvider::HYDRATOR_COLLECTION);
     }

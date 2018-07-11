@@ -13,7 +13,7 @@ class ConfigException extends \Exception
      * @param int $code
      * @param \Throwable|null $previous
      */
-    public function __construct(string $message = "", int $code = 0, \Throwable $previous = null)
+    public function __construct(string $message = '', int $code = 0, \Throwable $previous = null)
     {
         $message = '[Config] Config failure: ' . $message;
         parent::__construct($message, $code, $previous);

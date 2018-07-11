@@ -1,5 +1,0 @@
-volumes:
-  test:
-    type: dynamic
-    localPath: ./
-    remotePath: /data

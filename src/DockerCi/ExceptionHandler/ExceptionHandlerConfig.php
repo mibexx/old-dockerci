@@ -16,7 +16,7 @@ class ExceptionHandlerConfig extends AbstractConfig
      * @return bool
      * @throws \Xervice\Config\Exception\ConfigNotFound
      */
-    public function isDebug()
+    public function isDebug(): bool
     {
         return $this->get(self::IS_DEBUG, false);
     }
@@ -25,7 +25,7 @@ class ExceptionHandlerConfig extends AbstractConfig
      * @return bool
      * @throws \Xervice\Config\Exception\ConfigNotFound
      */
-    public function shutdownIfError()
+    public function shutdownIfError(): bool
     {
         return $this->get(self::SHUTDOWN_IF_ERROR, true);
     }

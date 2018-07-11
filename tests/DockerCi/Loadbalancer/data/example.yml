@@ -1,0 +1,7 @@
+loadbalancer:
+  -
+    serverName: www.de.suite.local
+    target: spryker
+  -
+    serverName: zed.de.suite.local
+    target: spryker

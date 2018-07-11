@@ -1,19 +1,18 @@
 <?php
 
 
-namespace DockerCi\Volume\Business\Plugin;
+namespace DockerCi\Loadbalancer\Plugin;
 
 
 use DataProvider\DockerConfigDataProvider;
 use DockerCi\DockerConfig\Business\Hydrator\HydratorInterface;
-use DockerCi\Volume\VolumeConfig;
+use DockerCi\Loadbalancer\LoadbalancerConfig;
 use Xervice\Core\Locator\AbstractWithLocator;
 
 /**
- * @method \DockerCi\Volume\VolumeFacade getFacade()
- * @method \DockerCi\Volume\VolumeFactory getFactory()
+ * @method \DockerCi\Loadbalancer\LoadbalancerFactory getFactory()
  */
-class VolumeHydratorPlugin extends AbstractWithLocator implements HydratorInterface
+class LoadbalancerDockerConfigPlugin extends AbstractWithLocator implements HydratorInterface
 {
     /**
      * @param array $data
@@ -24,9 +23,9 @@ class VolumeHydratorPlugin extends AbstractWithLocator implements HydratorInterf
      */
     public function hydrateConfig(array $data, DockerConfigDataProvider $dataProvider): DockerConfigDataProvider
     {
-        if (isset($data[VolumeConfig::CONFIG_IDENTIFIER])) {
-            $dataProvider = $this->getFactory()->getVolumeConfigHydrator(
-                $data[VolumeConfig::CONFIG_IDENTIFIER],
+        if (isset($data[LoadbalancerConfig::CONFIG_NAME])) {
+            $dataProvider = $this->getFactory()->createLoadbalancerHydrator(
+                $data[LoadbalancerConfig::CONFIG_NAME],
                 $dataProvider
             )->hydrate();
         }
