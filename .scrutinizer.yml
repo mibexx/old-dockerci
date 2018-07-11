@@ -4,6 +4,7 @@ filter:
 
   excluded_paths:
     - src/Generated
+    - src/Orm
 
 build:
   environment:
