@@ -51,7 +51,10 @@ class NodeHydrator
             $node = new NodeDataProvider();
             $node->setName($name);
 
-            $node = $this->hydrateNodeFromCollection($nodeConfig, $node);
+            $node = $this->hydrateNodeFromCollection(
+                \is_array($nodeConfig) ? $nodeConfig : [],
+                $node
+            );
 
             $this->config->addNode($node);
         }
@@ -65,11 +68,11 @@ class NodeHydrator
      *
      * @return \DataProvider\NodeDataProvider
      */
-    private function hydrateNodeFromCollection($nodeConfig, $node): \DataProvider\NodeDataProvider
+    private function hydrateNodeFromCollection(array $nodeConfig, $node): \DataProvider\NodeDataProvider
     {
         foreach ($this->nodeHydratorCollection as $hydrator) {
             $node = $hydrator->hydrate($nodeConfig, $node);
         }
         return $node;
-}
+    }
 }

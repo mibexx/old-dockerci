@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<DataProviders
+  xmlns="xervice:dataprovider-01"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="xervice:dataprovider-01 http://static.xervice.online/schema/dataprovider.schema.xsd"
+>
+
+    <DataProvider name="RedisConfig">
+        <DataElement name="Active" default="false" type="bool"/>
+    </DataProvider>
+
+    <DataProvider name="Node">
+        <DataElement name="Redis" type="RedisConfig"/>
+    </DataProvider>
+
+</DataProviders>

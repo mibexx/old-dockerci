@@ -24,7 +24,10 @@ class NodeDockerConfigPlugin extends AbstractWithLocator implements HydratorInte
     public function hydrateConfig(array $data, DockerConfigDataProvider $dataProvider): DockerConfigDataProvider
     {
         if (isset($data[NodesConfig::CONFIG_NAME])) {
-            $this->getFactory()->createNodeHydrator($data[NodesConfig::CONFIG_NAME], $dataProvider)->hydrate();
+            $this->getFactory()->createNodeHydrator(
+                is_array($data[NodesConfig::CONFIG_NAME]) ? $data[NodesConfig::CONFIG_NAME] : [],
+                $dataProvider
+            )->hydrate();
         }
 
         return $dataProvider;
