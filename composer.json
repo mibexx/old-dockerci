@@ -15,7 +15,10 @@
   "require": {
     "php": ">=7.1.0",
     "xervice/data-provider": "^1.0.2",
-    "symfony/yaml": "^4.1.1"
+    "xervice/database": "^1.0.1",
+    "xervice/redis": "^1.0.1",
+    "symfony/yaml": "^4.1.1",
+    "propel/propel": "2.0.0-alpha8"
   },
   "autoload": {
     "psr-4": {

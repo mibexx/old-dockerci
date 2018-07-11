@@ -3,4 +3,6 @@
 /src/Generated/*
 !/src/Generated/Ide
 /src/Generated/Ide/*
+/src/Orm/*
+/config/propel/*
 !.gitkeep
