@@ -26,7 +26,8 @@
       "DataProvider\\": "src/Generated/"
     },
     "psr-0": {
-      "DockerCi\\": "src/"
+      "DockerCi\\": "src/",
+      "Orm\\" : "src/"
     }
   }
 }

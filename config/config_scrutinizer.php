@@ -3,7 +3,7 @@
 use Xervice\Database\DatabaseConfig;
 use Xervice\Redis\RedisConfig;
 
-$config[RedisConfig::REDIS_HOST] = 'redis';
+$config[RedisConfig::REDIS_HOST] = '127.0.0.1';
 $config[RedisConfig::REDIS_PORT] = 6379;
 $config[RedisConfig::REDIS_PASSWORD] = '';
 $config[RedisConfig::REDIS_DATABASE] = 0;

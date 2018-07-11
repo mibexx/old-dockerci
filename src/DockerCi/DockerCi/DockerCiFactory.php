@@ -4,6 +4,8 @@
 namespace DockerCi\DockerCi;
 
 
+use DockerCi\DockerCi\Business\Project\ProjectWriter;
+use Orm\Xervice\Database\Persistence\ProjectQuery;
 use Xervice\Core\Factory\AbstractFactory;
 
 /**
@@ -11,5 +13,21 @@ use Xervice\Core\Factory\AbstractFactory;
  */
 class DockerCiFactory extends AbstractFactory
 {
-    // create here your internal classes
+    /**
+     * @return \DockerCi\DockerCi\Business\Project\ProjectWriter
+     */
+    public function createProjectWriter()
+    {
+        return new ProjectWriter(
+            $this->getProjectQuery()
+        );
+    }
+    
+    /**
+     * @return \Orm\Xervice\Database\Persistence\ProjectQuery
+     */
+    public function getProjectQuery()
+    {
+        return ProjectQuery::create();
+    }
 }

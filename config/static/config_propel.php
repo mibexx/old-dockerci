@@ -38,7 +38,7 @@ $config[DatabaseConfig::PROPEL] = [
             'defaultConnection' => 'default',
             'connections'       => ['default'],
             'recursive'         => true,
-            'tablePrefix'       => 'mp_'
+            'tablePrefix'       => 'ci_'
         ],
         'paths'     => [
             'projectDir'   => dirname(dirname(__DIR__)),

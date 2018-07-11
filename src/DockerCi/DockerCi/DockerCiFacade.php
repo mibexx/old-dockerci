@@ -4,6 +4,7 @@
 namespace DockerCi\DockerCi;
 
 
+use DataProvider\ProjectDataProvider;
 use Xervice\Core\Facade\AbstractFacade;
 
 /**
@@ -13,5 +14,14 @@ use Xervice\Core\Facade\AbstractFacade;
  */
 class DockerCiFacade extends AbstractFacade
 {
-    // create here your facades
+    /**
+     * @param \DataProvider\ProjectDataProvider $projectDataProvider
+     *
+     * @throws \DockerCi\DockerCi\Business\Project\Exception\ProjectException
+     * @throws \Propel\Runtime\Exception\PropelException
+     */
+    public function addProject(ProjectDataProvider $projectDataProvider)
+    {
+        $this->getFactory()->createProjectWriter()->add($projectDataProvider);
+    }
 }
