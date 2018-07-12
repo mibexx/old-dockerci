@@ -6,10 +6,11 @@
   xsi:schemaLocation="xervice:dataprovider-01 http://static.xervice.online/schema/dataprovider.schema.xsd"
 >
 
-    <DataProvider name="Project">
-        <DataElement name="ProjectId" type="int"/>
-        <DataElement name="Name" type="string"/>
-        <DataElement name="Repository" type="string"/>
+    <DataProvider name="GitArchive">
+        <DataElement name="Remote" type="string"/>
+        <DataElement name="Path" type="string"/>
+        <DataElement name="Filename" type="string"/>
+        <DataElement name="Target" type="string"/>
     </DataProvider>
 
 </DataProviders>

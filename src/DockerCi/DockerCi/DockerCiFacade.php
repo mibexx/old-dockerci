@@ -17,6 +17,17 @@ class DockerCiFacade extends AbstractFacade
     /**
      * @param \DataProvider\ProjectDataProvider $projectDataProvider
      *
+     * @return \DataProvider\ProjectDataProvider
+     * @throws \DockerCi\DockerCi\Business\Project\Exception\ProjectException
+     */
+    public function getProject(ProjectDataProvider $projectDataProvider): ProjectDataProvider
+    {
+        return $this->getFactory()->createProjectHydrator()->hydrateProject($projectDataProvider);
+    }
+
+    /**
+     * @param \DataProvider\ProjectDataProvider $projectDataProvider
+     *
      * @throws \DockerCi\DockerCi\Business\Project\Exception\ProjectException
      * @throws \Propel\Runtime\Exception\PropelException
      */

@@ -1,27 +1,26 @@
 <?php
 
 
-namespace DockerCi\DockerCi;
+namespace DockerCi\Git;
 
 
-use function foo\func;
 use Xervice\Core\Dependency\DependencyProviderInterface;
 use Xervice\Core\Dependency\Provider\AbstractProvider;
 
 /**
  * @method \Xervice\Core\Locator\Locator getLocator()
  */
-class DockerCiDependencyProvider extends AbstractProvider
+class GitDependencyProvider extends AbstractProvider
 {
-    const GIT_CLIENT = 'git.client';
+    const SHELL_FACADE = 'shell.facade';
 
     /**
      * @param \Xervice\Core\Dependency\DependencyProviderInterface $container
      */
     public function handleDependencies(DependencyProviderInterface $container)
     {
-        $container[self::GIT_CLIENT] = function(DependencyProviderInterface $container) {
-            return $container->getLocator()->git()->client();
+        $container[self::SHELL_FACADE] = function(DependencyProviderInterface $container) {
+            return $container->getLocator()->shell()->facade();
         };
     }
 }

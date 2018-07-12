@@ -1,7 +1,7 @@
 <?php
 
 
-namespace DockerCi\DockerCi\Business\Project;
+namespace DockerCi\DockerCi\Business\Project\Persistor;
 
 
 use DataProvider\ProjectDataProvider;
@@ -9,7 +9,7 @@ use DockerCi\DockerCi\Business\Project\Exception\ProjectException;
 use Orm\Xervice\DockerCi\Persistence\Project;
 use Orm\Xervice\DockerCi\Persistence\ProjectQuery;
 
-class ProjectWriter
+class ProjectWriter implements ProjectWriterInterface
 {
     /**
      * @var \Orm\Xervice\DockerCi\Persistence\ProjectQuery

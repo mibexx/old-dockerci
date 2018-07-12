@@ -5,17 +5,15 @@ namespace DockerCi\DockerCi\Communication\Console;
 
 
 use DataProvider\ProjectDataProvider;
-use DockerCi\DockerCi\Business\Project\Exception\ProjectException;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Xervice\Console\Command\AbstractCommand;
 use Xervice\Core\Locator\Locator;
 
 /**
  * @method \DockerCi\DockerCi\DockerCiFacade getFacade()
  */
-class AddProjectCommand extends AbstractCommand
+class AddProjectCommand extends AbstractDockerCiCommand
 {
     protected function configure()
     {
@@ -40,6 +38,7 @@ class AddProjectCommand extends AbstractCommand
         $project->setRepository($input->getArgument('repository'));
 
         try {
+            $this->initDatabase();
             $this->getFacade()->addProject($project);
         } catch (\Exception $e) {
             Locator::getInstance()->exceptionHandler()->facade()->handleException($e);

@@ -1,7 +1,10 @@
 <?php
 
+use DockerCi\ExceptionHandler\ExceptionHandlerConfig;
 use Xervice\Database\DatabaseConfig;
 use Xervice\Redis\RedisConfig;
+
+$config[ExceptionHandlerConfig::IS_DEBUG] = true;
 
 $config[RedisConfig::REDIS_HOST] = '127.0.0.1';
 $config[RedisConfig::REDIS_PORT] = 6379;
