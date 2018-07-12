@@ -12,4 +12,13 @@
         <DataElement name="Repository" type="string"/>
     </DataProvider>
 
+    <DataProvider name="DockerCi">
+        <DataElement name="Project" type="Project"/>
+        <DataElement name="Messages" singleton="Message" type="DockerCiMessage[]"/>
+    </DataProvider>
+
+    <DataProvider name="DockerCiMessage">
+        <DataElement name="Message" type="string"/>
+    </DataProvider>
+
 </DataProviders>

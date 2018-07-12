@@ -59,9 +59,14 @@ class IntegrationTest extends \Codeception\Test\Unit
             ]
         );
 
-        $this->getFacade()->runStepEngine(
-            $stepCollection,
-            $this->getExampleDataProvider()
+        $dataProvider = $this->getExampleDataProvider();
+
+        $this->assertEquals(
+            $dataProvider,
+            $this->getFacade()->runStepEngine(
+                $stepCollection,
+                $dataProvider
+            )
         );
     }
 

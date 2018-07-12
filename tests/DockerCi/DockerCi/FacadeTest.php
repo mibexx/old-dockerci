@@ -1,9 +1,17 @@
 <?php
 namespace DockerCiTest\DockerCi;
 
+use DataProvider\DockerCiDataProvider;
 use DataProvider\ProjectDataProvider;
+use DockerCi\DockerCi\DockerCiConfig;
+use DockerCi\DockerCi\DockerCiFacade;
+use DockerCi\DockerCi\DockerCiFactory;
+use DockerCi\StepEngine\Business\Step\StepCollection;
+use DockerCiTest\DockerCi\Example\TestStep;
 use Orm\Xervice\DockerCi\Persistence\Project;
 use Orm\Xervice\DockerCi\Persistence\ProjectQuery;
+use Xervice\Core\Client\EmptyClient;
+use Xervice\Core\Dependency\DependencyProvider;
 use Xervice\Core\Locator\Dynamic\DynamicLocator;
 
 /**

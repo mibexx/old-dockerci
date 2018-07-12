@@ -4,16 +4,26 @@
 namespace DockerCi\DockerCi;
 
 
+use DataProvider\DockerCiDataProvider;
 use DataProvider\ProjectDataProvider;
 use Xervice\Core\Facade\AbstractFacade;
 
 /**
  * @method \DockerCi\DockerCi\DockerCiFactory getFactory()
  * @method \DockerCi\DockerCi\DockerCiConfig getConfig()
- * @method \DockerCi\DockerCi\DockerCiClient getClient()
  */
 class DockerCiFacade extends AbstractFacade
 {
+    /**
+     * @param \DataProvider\DockerCiDataProvider $dataProvider
+     *
+     * @return \DataProvider\DockerCiDataProvider
+     */
+    public function runCi(DockerCiDataProvider $dataProvider): DockerCiDataProvider
+    {
+        return $this->getFactory()->createrCiRunner()->run($dataProvider);
+    }
+
     /**
      * @param \DataProvider\ProjectDataProvider $projectDataProvider
      *
