@@ -7,7 +7,9 @@ namespace DockerCi\DockerCi\Business\Ci;
 use DataProvider\DockerCiDataProvider;
 use DataProvider\DockerCiMessageDataProvider;
 use DataProvider\ProjectDataProvider;
+use DockerCi\DockerCi\Business\Project\Exception\ProjectException;
 use DockerCi\DockerCi\Business\Project\Hydrator\ProjectHydratorInterface;
+use Generated\Ide\DockerCi;
 
 class Prepare implements PrepareInterface
 {
@@ -50,7 +52,17 @@ class Prepare implements PrepareInterface
     public function getDockerCi(): DockerCiDataProvider
     {
         $this->project = $this->projectHydrator->hydrateProject($this->project);
+        $dockerDataProvider = $this->createDockerCiDataProvider();
+        $this->addMessageToDataProvider($dockerDataProvider);
 
+        return $dockerDataProvider;
+    }
+
+    /**
+     * @return \DataProvider\DockerCiDataProvider
+     */
+    protected function createDockerCiDataProvider(): DockerCiDataProvider
+    {
         $dockerDataProvider = new DockerCiDataProvider();
         $dockerDataProvider->setProject($this->project);
         $dockerDataProvider->setBuilddir(
@@ -60,7 +72,14 @@ class Prepare implements PrepareInterface
                 $this->project->getProjectId()
             )
         );
+        return $dockerDataProvider;
+    }
 
+    /**
+     * @param \DataProvider\DockerCiDataProvider $dockerDataProvider
+     */
+    protected function addMessageToDataProvider(DockerCiDataProvider $dockerDataProvider): void
+    {
         $message = new DockerCiMessageDataProvider();
         $message
             ->setGroup('Prepare')
@@ -71,8 +90,6 @@ class Prepare implements PrepareInterface
                 )
             );
         $dockerDataProvider->addMessage($message);
-
-        return $dockerDataProvider;
     }
 
 }
