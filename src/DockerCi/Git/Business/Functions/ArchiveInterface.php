@@ -11,5 +11,5 @@ interface ArchiveInterface
      *
      * @return string
      */
-    public function archiveOneFile(GitArchiveDataProvider $archiveDataProvider): string;
+    public function archive(GitArchiveDataProvider $archiveDataProvider): string;
 }
