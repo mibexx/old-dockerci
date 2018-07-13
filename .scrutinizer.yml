@@ -4,7 +4,7 @@ filter:
 
   dependency_paths:
     - "src/Generated/"
-    - "src/Orm"
+    - "src/Orm/"
     - "vendor/"
 
 build:
