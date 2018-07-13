@@ -9,6 +9,7 @@ use DataProvider\DockerCiDataProvider;
 use DataProvider\DockerCiMessageDataProvider;
 use DataProvider\ProjectDataProvider;
 use DockerCi\StepEngine\Business\Step\AbstractStep as StepEngineAbstractStep;
+use Xervice\DataProvider\DataProvider\AbstractDataProvider;
 
 abstract class AbstractStep extends StepEngineAbstractStep
 {
@@ -37,7 +38,7 @@ abstract class AbstractStep extends StepEngineAbstractStep
     /**
      * @return \DataProvider\DockerCiDataProvider
      */
-    protected function getData(): DockerCiDataProvider
+    protected function getData(): AbstractDataProvider
     {
         return $this->dataProvider;
     }

@@ -39,7 +39,7 @@ class Runner implements RunnerInterface
     /**
      * @param \Xervice\DataProvider\DataProvider\AbstractDataProvider $dataProvider
      *
-     * @return \Xervice\DataProvider\DataProvider\AbstractDataProvider
+     * @return \DataProvider\DockerCiDataProvider
      * @throws \DockerCi\StepEngine\Business\Exception\StepException
      */
     public function run(AbstractDataProvider $dataProvider): AbstractDataProvider

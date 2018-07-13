@@ -8,9 +8,9 @@ use Xervice\DataProvider\DataProvider\AbstractDataProvider;
 interface RunnerInterface
 {
     /**
-     * @param \DockerCi\DockerCi\Business\Ci\DockerCiDataProvider $dataProvider
+     * @param \Xervice\DataProvider\DataProvider\AbstractDataProvider $dataProvider
      *
-     * @return \Xervice\DataProvider\DataProvider\AbstractDataProvider
+     * @return \DataProvider\DockerCiDataProvider
      */
     public function run(AbstractDataProvider $dataProvider): AbstractDataProvider;
 }

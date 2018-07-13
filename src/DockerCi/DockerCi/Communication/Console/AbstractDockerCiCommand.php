@@ -7,6 +7,7 @@ namespace DockerCi\DockerCi\Communication\Console;
 
 use Xervice\Console\Command\AbstractCommand;
 use Xervice\Core\Locator\Locator;
+use Xervice\Database\DatabaseFacade;
 
 abstract class AbstractDockerCiCommand extends AbstractCommand
 {
@@ -15,6 +16,14 @@ abstract class AbstractDockerCiCommand extends AbstractCommand
      */
     public function initDatabase(): void
     {
-        Locator::getInstance()->database()->facade()->initDatabase();
+        $this->getDatabaseFacade()->initDatabase();
+    }
+
+    /**
+     * @return \Xervice\Database\DatabaseFacade
+     */
+    private function getDatabaseFacade(): DatabaseFacade
+    {
+        return Locator::getInstance()->database()->facade();
     }
 }
