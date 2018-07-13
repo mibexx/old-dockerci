@@ -21,6 +21,7 @@ class DockerCiDependencyProvider extends AbstractProvider
     public const STEP_ENGINE_FACADE = 'step.engine.facade';
 
     public const SHELL_FACADE = 'shell.facade';
+    public const EXCEPTION_HANDLER_FACADE = 'exception.handler.facade';
     public const DOCKER_FACADE = 'docker.facade';
 
     public const STEP_COLLECTION = 'step.collection';
@@ -44,6 +45,10 @@ class DockerCiDependencyProvider extends AbstractProvider
 
         $container[self::DOCKER_FACADE] = function(DependencyProviderInterface $container) {
             return $container->getLocator()->docker()->facade();
+        };
+
+        $container[self::EXCEPTION_HANDLER_FACADE] = function(DependencyProviderInterface $container) {
+            return $container->getLocator()->exceptionHandler()->facade();
         };
 
         $container[self::STEP_COLLECTION] = function() {

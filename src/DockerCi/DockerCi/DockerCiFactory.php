@@ -16,6 +16,7 @@ use DockerCi\DockerCi\Business\Project\Hydrator\ProjectHydrator;
 use DockerCi\DockerCi\Business\Project\Hydrator\ProjectHydratorInterface;
 use DockerCi\DockerCi\Business\Project\Persistor\ProjectWriter;
 use DockerCi\DockerCi\Business\Project\Persistor\ProjectWriterInterface;
+use DockerCi\ExceptionHandler\ExceptionHandlerFacade;
 use DockerCi\Git\GitClient;
 use DockerCi\Shell\ShellFacade;
 use DockerCi\StepEngine\Business\Step\StepCollection;
@@ -104,6 +105,14 @@ class DockerCiFactory extends AbstractFactory
     public function getDockerFacade(): DockerFacade
     {
         return $this->getDependency(DockerCiDependencyProvider::DOCKER_FACADE);
+    }
+
+    /**
+     * @return \DockerCi\ExceptionHandler\ExceptionHandlerFacade
+     */
+    public function getExceptionHandlerFacade(): ExceptionHandlerFacade
+    {
+        return $this->getDependency(DockerCiDependencyProvider::EXCEPTION_HANDLER_FACADE);
     }
     
     /**

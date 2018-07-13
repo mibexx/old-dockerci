@@ -13,6 +13,7 @@ use Xervice\Core\Locator\Locator;
 
 /**
  * @method \DockerCi\DockerCi\DockerCiFacade getFacade()
+ * @method \DockerCi\DockerCi\DockerCiFactory getFactory()
  */
 class AddProjectCommand extends AbstractDockerCiCommand
 {
@@ -35,6 +36,7 @@ class AddProjectCommand extends AbstractDockerCiCommand
      *
      * @return int|null|void
      * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
+     * @throws \Core\Locator\Dynamic\ServiceNotParseable
      * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -47,7 +49,7 @@ class AddProjectCommand extends AbstractDockerCiCommand
             $this->initDatabase();
             $this->getFacade()->addProject($project);
         } catch (\Exception $e) {
-            Locator::getInstance()->exceptionHandler()->facade()->handleException($e);
+            $this->getFactory()->getExceptionHandlerFacade()->handleException($e);
         }
     }
 
