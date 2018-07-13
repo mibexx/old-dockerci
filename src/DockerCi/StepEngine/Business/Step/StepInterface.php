@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace DockerCi\StepEngine\Business\Step;
 
 
-use Xervice\DataProvider\DataProvider\AbstractDataProvider;
+use Xervice\DataProvider\DataProvider\DataProviderInterface;
 
 interface StepInterface
 {
@@ -25,7 +25,7 @@ interface StepInterface
     public function execute(): void;
 
     /**
-     * @param \Xervice\DataProvider\DataProvider\AbstractDataProvider $dataProvider
+     * @param \Xervice\DataProvider\DataProvider\DataProviderInterface $dataProvider
      */
-    public function setData(AbstractDataProvider $dataProvider): void;
+    public function setData(DataProviderInterface $dataProvider): void;
 }

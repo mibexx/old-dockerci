@@ -6,19 +6,19 @@ namespace DockerCi\StepEngine\Business\Step;
 
 
 use Xervice\Core\Locator\AbstractWithLocator;
-use Xervice\DataProvider\DataProvider\AbstractDataProvider;
+use Xervice\DataProvider\DataProvider\DataProviderInterface;
 
 abstract class AbstractStep extends AbstractWithLocator implements StepInterface
 {
     /**
-     * @var AbstractDataProvider
+     * @var DataProviderInterface
      */
     protected $dataProvider;
 
     /**
-     * @param \Xervice\DataProvider\DataProvider\AbstractDataProvider $dataProvider
+     * @param \Xervice\DataProvider\DataProvider\DataProviderInterface $dataProvider
      */
-    public function setData(AbstractDataProvider $dataProvider): void
+    public function setData(DataProviderInterface $dataProvider): void
     {
         $this->dataProvider = $dataProvider;
     }

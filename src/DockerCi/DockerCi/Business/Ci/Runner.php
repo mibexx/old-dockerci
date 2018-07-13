@@ -8,7 +8,7 @@ namespace DockerCi\DockerCi\Business\Ci;
 use DataProvider\DockerCiDataProvider;
 use DockerCi\StepEngine\Business\Step\StepCollection;
 use DockerCi\StepEngine\StepEngineFacade;
-use Xervice\DataProvider\DataProvider\AbstractDataProvider;
+use Xervice\DataProvider\DataProvider\DataProviderInterface;
 
 class Runner implements RunnerInterface
 {
@@ -37,12 +37,12 @@ class Runner implements RunnerInterface
     }
 
     /**
-     * @param \Xervice\DataProvider\DataProvider\AbstractDataProvider $dataProvider
+     * @param \DataProvider\DockerCiDataProvider $dataProvider
      *
      * @return \DataProvider\DockerCiDataProvider
      * @throws \DockerCi\StepEngine\Business\Exception\StepException
      */
-    public function run(AbstractDataProvider $dataProvider): AbstractDataProvider
+    public function run(DockerCiDataProvider $dataProvider): DataProviderInterface
     {
         return $this->stepEngineFacade->runStepEngine(
             $this->stepCollection,

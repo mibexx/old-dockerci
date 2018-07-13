@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace DockerCi\StepEngine\Business\Engine;
 
 
-use DockerCi\StepEngine\Business\Exception\StepException;
 use DockerCi\StepEngine\Business\Step\StepCollection;
-use Xervice\DataProvider\DataProvider\AbstractDataProvider;
+use Xervice\DataProvider\DataProvider\DataProviderInterface;
 
 class StepEngine implements StepEngineInterface
 {
@@ -17,7 +16,7 @@ class StepEngine implements StepEngineInterface
     private $stepCollection;
 
     /**
-     * @var \Xervice\DataProvider\DataProvider\AbstractDataProvider
+     * @var \Xervice\DataProvider\DataProvider\DataProviderInterface
      */
     private $dataProvider;
 
@@ -25,11 +24,11 @@ class StepEngine implements StepEngineInterface
      * StepEngine constructor.
      *
      * @param \DockerCi\StepEngine\Business\Step\StepCollection $stepCollection
-     * @param \Xervice\DataProvider\DataProvider\AbstractDataProvider $dataProvider
+     * @param \Xervice\DataProvider\DataProvider\DataProviderInterface $dataProvider
      */
     public function __construct(
         StepCollection $stepCollection,
-        AbstractDataProvider $dataProvider
+        DataProviderInterface $dataProvider
     ) {
         $this->stepCollection = $stepCollection;
         $this->dataProvider = $dataProvider;
@@ -38,7 +37,7 @@ class StepEngine implements StepEngineInterface
     /**
      * @throws \DockerCi\StepEngine\Business\Exception\StepException
      */
-    public function executeStep(): AbstractDataProvider
+    public function executeStep(): DataProviderInterface
     {
         foreach ($this->stepCollection as $step) {
             $step->setData($this->dataProvider);

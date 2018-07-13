@@ -9,7 +9,7 @@ use DockerCi\StepEngine\Business\Engine\StepEngine;
 use DockerCi\StepEngine\Business\Engine\StepEngineInterface;
 use DockerCi\StepEngine\Business\Step\StepCollection;
 use Xervice\Core\Factory\AbstractFactory;
-use Xervice\DataProvider\DataProvider\AbstractDataProvider;
+use Xervice\DataProvider\DataProvider\DataProviderInterface;
 
 /**
  * @method \DockerCi\StepEngine\StepEngineConfig getConfig()
@@ -18,11 +18,11 @@ class StepEngineFactory extends AbstractFactory
 {
     /**
      * @param \DockerCi\StepEngine\Business\Step\StepCollection $stepCollection
-     * @param \Xervice\DataProvider\DataProvider\AbstractDataProvider $dataProvider
+     * @param \Xervice\DataProvider\DataProvider\DataProviderInterface $dataProvider
      *
      * @return \DockerCi\StepEngine\Business\Engine\StepEngineInterface
      */
-    public function createStepEngine(StepCollection $stepCollection, AbstractDataProvider $dataProvider): StepEngineInterface
+    public function createStepEngine(StepCollection $stepCollection, DataProviderInterface $dataProvider): StepEngineInterface
     {
         return new StepEngine(
             $stepCollection,
