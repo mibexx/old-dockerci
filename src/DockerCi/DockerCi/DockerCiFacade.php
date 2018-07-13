@@ -54,7 +54,7 @@ class DockerCiFacade extends AbstractFacade
      * @throws \DockerCi\DockerCi\Business\Project\Exception\ProjectException
      * @throws \Propel\Runtime\Exception\PropelException
      */
-    public function addProject(ProjectDataProvider $projectDataProvider)
+    public function addProject(ProjectDataProvider $projectDataProvider): void
     {
         $this->getFactory()->createProjectWriter()->add($projectDataProvider);
     }

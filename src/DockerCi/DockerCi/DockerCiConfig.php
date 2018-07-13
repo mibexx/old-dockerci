@@ -10,13 +10,13 @@ use Xervice\Core\Config\AbstractConfig;
 
 class DockerCiConfig extends AbstractConfig
 {
-    const BUILD_DIR = 'build.dir';
+    public const BUILD_DIR = 'build.dir';
 
     /**
      * @return string
      * @throws \Xervice\Config\Exception\ConfigNotFound
      */
-    public function getBuildDir()
+    public function getBuildDir(): string
     {
         return $this->get(
             self::BUILD_DIR,

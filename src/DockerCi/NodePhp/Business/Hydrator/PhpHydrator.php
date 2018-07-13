@@ -61,7 +61,7 @@ class PhpHydrator implements PhpHydratorInterface
     /**
      * @throws \DockerCi\DockerConfig\Business\Exception\ConfigException
      */
-    private function validateConfig()
+    private function validateConfig(): void
     {
         if (!isset($this->data['version'])) {
             throw new ConfigException(

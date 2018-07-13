@@ -16,7 +16,11 @@ use Xervice\Core\Locator\Locator;
  */
 class AddProjectCommand extends AbstractDockerCiCommand
 {
-    protected function configure()
+    /**
+     *
+     * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
+     */
+    protected function configure(): void
     {
         $this
             ->setName('ci:project:add')
@@ -30,6 +34,7 @@ class AddProjectCommand extends AbstractDockerCiCommand
      * @param \Symfony\Component\Console\Output\OutputInterface $output
      *
      * @return int|null|void
+     * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
      * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     protected function execute(InputInterface $input, OutputInterface $output)

@@ -6,6 +6,7 @@ namespace DockerCi\Nodes;
 
 
 use DataProvider\DockerConfigDataProvider;
+use DockerCi\Nodes\Business\Hydrator\Collector\NodeHydratorCollection;
 use DockerCi\Nodes\Business\Hydrator\NodeHydrator;
 use Xervice\Core\Factory\AbstractFactory;
 
@@ -26,7 +27,7 @@ class NodesFactory extends AbstractFactory
     /**
      * @return \DockerCi\Nodes\Business\Hydrator\Collector\NodeHydratorCollection
      */
-    public function getNodeHydratorCollection()
+    public function getNodeHydratorCollection(): NodeHydratorCollection
     {
         return $this->getDependency(NodesDependencyProvider::NODE_HYDRATOR_COLLECTION);
     }

@@ -9,13 +9,13 @@ use Xervice\Core\Config\AbstractConfig;
 
 class DockerConfig extends AbstractConfig
 {
-    const DOCKER_COMMAND = 'docker.command';
+    public const DOCKER_COMMAND = 'docker.command';
 
     /**
      * @return string
      * @throws \Xervice\Config\Exception\ConfigNotFound
      */
-    public function getDockerCommand()
+    public function getDockerCommand(): string
     {
         return $this->get(self::DOCKER_COMMAND, 'docker');
     }

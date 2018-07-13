@@ -3,15 +3,14 @@ declare(strict_types=1);
 
 namespace DockerCi\DockerCi\Business\Ci;
 
-use DataProvider\DockerCiDataProvider;
+use Xervice\DataProvider\DataProvider\AbstractDataProvider;
 
 interface RunnerInterface
 {
     /**
-     * @param \DataProvider\DockerCiDataProvider $dataProvider
+     * @param \DockerCi\DockerCi\Business\Ci\DockerCiDataProvider $dataProvider
      *
-     * @return \DataProvider\DockerCiDataProvider
-     * @throws \DockerCi\StepEngine\Business\Exception\StepException
+     * @return \Xervice\DataProvider\DataProvider\AbstractDataProvider
      */
-    public function run(DockerCiDataProvider $dataProvider): DockerCiDataProvider;
+    public function run(AbstractDataProvider $dataProvider): AbstractDataProvider;
 }

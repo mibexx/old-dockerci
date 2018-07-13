@@ -9,7 +9,7 @@ use Xervice\Core\Config\AbstractConfig;
 
 class GitConfig extends AbstractConfig
 {
-    const GIT_COMMAND = 'git.command';
+    public const GIT_COMMAND = 'git.command';
 
     /**
      * @return string

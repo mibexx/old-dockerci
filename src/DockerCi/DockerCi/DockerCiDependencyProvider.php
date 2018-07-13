@@ -28,7 +28,7 @@ class DockerCiDependencyProvider extends AbstractProvider
     /**
      * @param \Xervice\Core\Dependency\DependencyProviderInterface $container
      */
-    public function handleDependencies(DependencyProviderInterface $container)
+    public function handleDependencies(DependencyProviderInterface $container): void
     {
         $container[self::GIT_CLIENT] = function(DependencyProviderInterface $container) {
             return $container->getLocator()->git()->client();

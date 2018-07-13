@@ -21,7 +21,7 @@ class NodesDependencyProvider extends AbstractProvider
     /**
      * @param \Xervice\Core\Dependency\DependencyProviderInterface $container
      */
-    public function handleDependencies(DependencyProviderInterface $container)
+    public function handleDependencies(DependencyProviderInterface $container): void
     {
         $container[self::NODE_HYDRATOR_COLLECTION] = function() {
             return new NodeHydratorCollection(

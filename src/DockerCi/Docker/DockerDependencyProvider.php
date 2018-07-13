@@ -13,12 +13,12 @@ use Xervice\Core\Dependency\Provider\AbstractProvider;
  */
 class DockerDependencyProvider extends AbstractProvider
 {
-    const SHELL_FACADE = 'shell.facade';
+    public const SHELL_FACADE = 'shell.facade';
 
     /**
      * @param \Xervice\Core\Dependency\DependencyProviderInterface $container
      */
-    public function handleDependencies(DependencyProviderInterface $container)
+    public function handleDependencies(DependencyProviderInterface $container): void
     {
         $container[self::SHELL_FACADE] = function(DependencyProviderInterface $container) {
             return $container->getLocator()->shell()->facade();

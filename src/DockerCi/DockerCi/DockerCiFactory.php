@@ -117,7 +117,7 @@ class DockerCiFactory extends AbstractFactory
     /**
      * @return \Orm\Xervice\DockerCi\Persistence\ProjectQuery
      */
-    public function getProjectQuery()
+    public function getProjectQuery(): ProjectQuery
     {
         return ProjectQuery::create();
     }

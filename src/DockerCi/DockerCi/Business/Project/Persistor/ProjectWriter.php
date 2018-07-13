@@ -33,7 +33,7 @@ class ProjectWriter implements ProjectWriterInterface
      * @throws \DockerCi\DockerCi\Business\Project\Exception\ProjectException
      * @throws \Propel\Runtime\Exception\PropelException
      */
-    public function add(ProjectDataProvider $projectDataProvider)
+    public function add(ProjectDataProvider $projectDataProvider): void
     {
         $this->validateProject($projectDataProvider);
 
