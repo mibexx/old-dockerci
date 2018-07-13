@@ -42,9 +42,9 @@ class CloneProject extends AbstractStep
             ->setRemote($this->getData()->getProject()->getRepository())
             ->setTarget($this->getData()->getBuilddir());
 
-        $output = $this->getFactory()->getGitClient()->clone($gitClone);
+        $this->getFactory()->getGitClient()->clone($gitClone);
         $this->addMessage(
-            $output,
+            'Project was cloned',
             'Prepare'
         );
     }
