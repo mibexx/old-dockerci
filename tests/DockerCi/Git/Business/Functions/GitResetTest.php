@@ -1,12 +1,11 @@
 <?php
 namespace DockerCiTest\Git\Business\Functions;
 
-use DataProvider\GitCloneDataProvider;
 use DockerCi\Git\Business\Functions\Archive;
-use DockerCi\Git\Business\Functions\GitClone;
+use DockerCi\Git\Business\Functions\GitReset;
 use DockerCi\Git\Business\Git\GitShell;
 
-class GitCloneTest extends \Codeception\Test\Unit
+class GitResetTest extends \Codeception\Test\Unit
 {
 
     /**
@@ -14,16 +13,11 @@ class GitCloneTest extends \Codeception\Test\Unit
      * @group Git
      * @group Business
      * @group Functions
-     * @group Clone
+     * @group Reset
      * @group Unit
      */
-    public function testClone()
+    public function testRestHard()
     {
-        $dataProvider = new GitCloneDataProvider();
-        $dataProvider
-            ->setRemote('remote')
-            ->setTarget('target');
-
         $gitShell = $this
             ->getMockBuilder(GitShell::class)
             ->setMethods(['runGit'])
@@ -34,13 +28,12 @@ class GitCloneTest extends \Codeception\Test\Unit
             ->expects($this->once())
             ->method('runGit')
             ->with(
-                $this->equalTo('clone %s %s'),
-                $this->equalTo('remote'),
-                $this->equalTo('target')
+                $this->equalTo('reset --hard HEAD %s'),
+                $this->equalTo('test-path')
             )
             ->willReturn('Testing');
 
-        $archive = new GitClone($gitShell);
-        $archive->clone($dataProvider);
+        $archive = new GitReset($gitShell);
+        $archive->resetHard('test-path');
     }
 }

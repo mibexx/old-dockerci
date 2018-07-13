@@ -1,12 +1,11 @@
 <?php
 namespace DockerCiTest\Git\Business\Functions;
 
-use DataProvider\GitCloneDataProvider;
 use DockerCi\Git\Business\Functions\Archive;
-use DockerCi\Git\Business\Functions\GitClone;
+use DockerCi\Git\Business\Functions\GitPull;
 use DockerCi\Git\Business\Git\GitShell;
 
-class GitCloneTest extends \Codeception\Test\Unit
+class GitPullTest extends \Codeception\Test\Unit
 {
 
     /**
@@ -14,16 +13,11 @@ class GitCloneTest extends \Codeception\Test\Unit
      * @group Git
      * @group Business
      * @group Functions
-     * @group Clone
+     * @group Pull
      * @group Unit
      */
-    public function testClone()
+    public function testPull()
     {
-        $dataProvider = new GitCloneDataProvider();
-        $dataProvider
-            ->setRemote('remote')
-            ->setTarget('target');
-
         $gitShell = $this
             ->getMockBuilder(GitShell::class)
             ->setMethods(['runGit'])
@@ -34,13 +28,13 @@ class GitCloneTest extends \Codeception\Test\Unit
             ->expects($this->once())
             ->method('runGit')
             ->with(
-                $this->equalTo('clone %s %s'),
-                $this->equalTo('remote'),
-                $this->equalTo('target')
+                $this->equalTo('--git-dir=%s --work-tree=%s pull'),
+                $this->equalTo('test-path/.git'),
+                $this->equalTo('test-path')
             )
             ->willReturn('Testing');
 
-        $archive = new GitClone($gitShell);
-        $archive->clone($dataProvider);
+        $archive = new GitPull($gitShell);
+        $archive->pull('test-path');
     }
 }
