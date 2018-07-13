@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace DockerCi\Git;
 
 
-use DataProvider\GitArchiveDataProvider;
 use DataProvider\GitCloneDataProvider;
 use Xervice\Core\Client\AbstractClient;
 

@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace DockerCi\Git;
 
 
-use DockerCi\Git\Business\Functions\Archive;
-use DockerCi\Git\Business\Functions\ArchiveInterface;
 use DockerCi\Git\Business\Functions\GitClone;
 use DockerCi\Git\Business\Functions\GitCloneInterface;
 use DockerCi\Git\Business\Git\GitShell;
