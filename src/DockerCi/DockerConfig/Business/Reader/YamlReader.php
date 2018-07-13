@@ -18,6 +18,10 @@ class YamlReader implements ReaderInterface
      */
     public function getArrayFromFile(DockerConfigFileDataProvider $dataProvider): array
     {
-        return Yaml::parse(file_get_contents($dataProvider->getPath()));
+        return (array) Yaml::parse(
+            file_get_contents(
+                $dataProvider->getPath()
+            )
+        );
     }
 }
