@@ -38,7 +38,7 @@ class PrepareWorkdir extends AbstractStep
     public function execute(): void
     {
         if (!is_dir($this->getData()->getBuilddir())) {
-             $this->getFactory()->getShellFacade()->runCommand(
+            $this->getFactory()->getShellFacade()->runCommand(
                 'mkdir -m 0777 -p %s',
                 $this->getData()->getBuilddir()
             );

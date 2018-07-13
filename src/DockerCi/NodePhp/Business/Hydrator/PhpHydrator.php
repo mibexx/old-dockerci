@@ -44,7 +44,7 @@ class PhpHydrator implements PhpHydratorInterface
         $this->validateConfig();
 
         $phpConfig = new PhpConfigDataProvider();
-        $phpConfig->setVersion((string)$this->data['version']);
+        $phpConfig->setVersion((string) $this->data['version']);
 
         if (isset($this->data['extensions'])) {
             $phpConfig->setExtensions($this->data['extensions']);

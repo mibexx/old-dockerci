@@ -8,9 +8,7 @@ namespace DockerCi\DockerCi\Business\Ci;
 use DataProvider\DockerCiDataProvider;
 use DataProvider\DockerCiMessageDataProvider;
 use DataProvider\ProjectDataProvider;
-use DockerCi\DockerCi\Business\Project\Exception\ProjectException;
 use DockerCi\DockerCi\Business\Project\Hydrator\ProjectHydratorInterface;
-use Generated\Ide\DockerCi;
 
 class Prepare implements PrepareInterface
 {
