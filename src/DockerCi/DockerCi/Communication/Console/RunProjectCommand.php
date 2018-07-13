@@ -35,26 +35,10 @@ class RunProjectCommand extends AbstractDockerCiCommand
     {
         $this->initDatabase();
 
-        $project = new ProjectDataProvider();
-        $project->setProjectId(
-            $input->getArgument('project_id')
-        );
+        $project = $this->createProjectDataProvider($input);
 
         try {
-            $dockerCiDataProvider = $this->getFacade()->prepareCi($project);
-            $dockerCiDataProvider = $this->getFacade()->runCi($dockerCiDataProvider);
-
-            if ($output->isVerbose()) {
-                foreach ($dockerCiDataProvider->getMessages() as $message) {
-                    $output->writeln(
-                        sprintf(
-                            '[%s] %s',
-                            $message->getGroup(),
-                            $message->getMessage()
-                        )
-                    );
-                }
-            }
+            $this->runProjectCi($output, $project);
         } catch (StepException $exception) {
             if ($output->isVerbose()) {
                 $output->writeln($exception->getMessage());
@@ -63,6 +47,46 @@ class RunProjectCommand extends AbstractDockerCiCommand
                 $output->writeln($exception->getTraceAsString());
             }
         }
+    }
+
+    /**
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     * @param $project
+     *
+     * @throws \Core\Locator\Dynamic\ServiceNotParseable
+     * @throws \DockerCi\StepEngine\Business\Exception\StepException
+     * @throws \Xervice\Config\Exception\ConfigNotFound
+     */
+    protected function runProjectCi(OutputInterface $output, $project): void
+    {
+        $dockerCiDataProvider = $this->getFacade()->prepareCi($project);
+        $dockerCiDataProvider = $this->getFacade()->runCi($dockerCiDataProvider);
+
+        if ($output->isVerbose()) {
+            foreach ($dockerCiDataProvider->getMessages() as $message) {
+                $output->writeln(
+                    sprintf(
+                        '[%s] %s',
+                        $message->getGroup(),
+                        $message->getMessage()
+                    )
+                );
+            }
+        }
+    }
+
+    /**
+     * @param \Symfony\Component\Console\Input\InputInterface $input
+     *
+     * @return \DataProvider\ProjectDataProvider
+     */
+    protected function createProjectDataProvider(InputInterface $input): ProjectDataProvider
+    {
+        $project = new ProjectDataProvider();
+        $project->setProjectId(
+            $input->getArgument('project_id')
+        );
+        return $project;
     }
 
 }
