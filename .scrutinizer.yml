@@ -1,10 +1,11 @@
 filter:
-  paths:
-    - src/
+  excluded_paths:
+    - "tests/"
 
   dependency_paths:
-    - src/Generated
-    - src/Orm
+    - "src/Generated/"
+    - "src/Orm"
+    - "vendor/"
 
 build:
   environment:
@@ -33,7 +34,7 @@ build:
         coverage:
           file: 'tests/_output/coverage.xml'
           format: 'clover'
-      - php-scrutinizer-run
+      - php-scrutinizer-run --enable-security-analysis
 
 coding_style:
     php:
