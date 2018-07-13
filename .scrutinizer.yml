@@ -35,9 +35,6 @@ build:
           file: 'tests/_output/coverage.xml'
           format: 'clover'
       - php-scrutinizer-run --enable-security-analysis
-      -
-        command: phpcs-run
-        use_website_config: true
 
 checks:
   php:

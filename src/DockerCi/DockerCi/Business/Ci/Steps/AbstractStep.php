@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace DockerCi\DockerCi\Business\Ci\Steps;
 
 
-use DataProvider\DockerCiDataProvider;
 use DataProvider\DockerCiMessageDataProvider;
 use DataProvider\ProjectDataProvider;
 use DockerCi\StepEngine\Business\Step\AbstractStep as StepEngineAbstractStep;
