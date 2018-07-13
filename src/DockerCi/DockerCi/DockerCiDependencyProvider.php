@@ -4,6 +4,7 @@
 namespace DockerCi\DockerCi;
 
 
+use DockerCi\DockerCi\Business\Ci\Steps\PrepareWorkdir;
 use DockerCi\StepEngine\Business\Step\StepCollection;
 use function foo\func;
 use Xervice\Core\Dependency\DependencyProviderInterface;
@@ -17,6 +18,9 @@ class DockerCiDependencyProvider extends AbstractProvider
     public const GIT_CLIENT = 'git.client';
 
     public const STEP_ENGINE_FACADE = 'step.engine.facade';
+
+    public const SHELL_FACADE = 'shell.facade';
+    public const DOCKER_FACADE = 'docker.facade';
 
     public const STEP_COLLECTION = 'step.collection';
 
@@ -33,12 +37,19 @@ class DockerCiDependencyProvider extends AbstractProvider
             return $container->getLocator()->stepEngine()->facade();
         };
 
+        $container[self::SHELL_FACADE] = function(DependencyProviderInterface $container) {
+            return $container->getLocator()->shell()->facade();
+        };
+
+        $container[self::DOCKER_FACADE] = function(DependencyProviderInterface $container) {
+            return $container->getLocator()->docker()->facade();
+        };
+
         $container[self::STEP_COLLECTION] = function() {
             return new StepCollection(
                 $this->getSteps()
             );
         };
-
     }
 
     /**
@@ -46,6 +57,8 @@ class DockerCiDependencyProvider extends AbstractProvider
      */
     protected function getSteps(): array
     {
-        return [];
+        return [
+            new PrepareWorkdir()
+        ];
     }
 }

@@ -18,10 +18,22 @@ class DockerCiFacade extends AbstractFacade
      * @param \DataProvider\DockerCiDataProvider $dataProvider
      *
      * @return \DataProvider\DockerCiDataProvider
+     * @throws \DockerCi\StepEngine\Business\Exception\StepException
      */
     public function runCi(DockerCiDataProvider $dataProvider): DockerCiDataProvider
     {
         return $this->getFactory()->createrCiRunner()->run($dataProvider);
+    }
+
+    /**
+     * @param \DataProvider\ProjectDataProvider $dataProvider
+     *
+     * @return \DataProvider\DockerCiDataProvider
+     * @throws \Xervice\Config\Exception\ConfigNotFound
+     */
+    public function prepareCi(ProjectDataProvider $dataProvider): DockerCiDataProvider
+    {
+        return $this->getFactory()->createCiPrepare($dataProvider)->getDockerCi();
     }
 
     /**

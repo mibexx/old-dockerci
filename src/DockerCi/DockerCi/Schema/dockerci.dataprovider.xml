@@ -14,10 +14,12 @@
 
     <DataProvider name="DockerCi">
         <DataElement name="Project" type="Project"/>
+        <DataElement name="Builddir" type="string"/>
         <DataElement name="Messages" singleton="Message" type="DockerCiMessage[]"/>
     </DataProvider>
 
     <DataProvider name="DockerCiMessage">
+        <DataElement name="Group" default="General" type="string"/>
         <DataElement name="Message" type="string"/>
     </DataProvider>
 

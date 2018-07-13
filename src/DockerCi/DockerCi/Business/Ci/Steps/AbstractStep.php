@@ -1,0 +1,43 @@
+<?php
+
+
+namespace DockerCi\DockerCi\Business\Ci\Steps;
+
+
+use DataProvider\DockerCiDataProvider;
+use DataProvider\DockerCiMessageDataProvider;
+use DataProvider\ProjectDataProvider;
+use DockerCi\StepEngine\Business\Step\AbstractStep as StepEngineAbstractStep;
+
+abstract class AbstractStep extends StepEngineAbstractStep
+{
+    /**
+     * @return \DataProvider\ProjectDataProvider
+     */
+    protected function getProject(): ProjectDataProvider
+    {
+        return $this->getData()->getProject();
+    }
+
+    /**
+     * @param string $message
+     * @param string $group
+     */
+    protected function addMessage(string $message, string $group): void
+    {
+        $dataProvider = new DockerCiMessageDataProvider();
+        $dataProvider
+            ->setMessage($message)
+            ->setGroup($group);
+
+        $this->getData()->addMessage($dataProvider);
+    }
+
+    /**
+     * @return \DataProvider\DockerCiDataProvider
+     */
+    protected function getData(): DockerCiDataProvider
+    {
+        return $this->dataProvider;
+    }
+}

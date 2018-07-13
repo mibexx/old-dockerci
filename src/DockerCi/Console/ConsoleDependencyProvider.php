@@ -5,6 +5,7 @@ namespace DockerCi\Console;
 
 
 use DockerCi\DockerCi\Communication\Console\AddProjectCommand;
+use DockerCi\DockerCi\Communication\Console\RunProjectCommand;
 use Xervice\Console\ConsoleDependencyProvider as XerviceConsoleDependencyProvider;
 use Xervice\Database\Command\ConfigGenerateCommand;
 use Xervice\Database\Command\MigrateCommand;
@@ -25,7 +26,8 @@ class ConsoleDependencyProvider extends XerviceConsoleDependencyProvider
             new ConfigGenerateCommand(),
             new MigrateCommand(),
             new ModelBuildCommand(),
-            new AddProjectCommand()
+            new AddProjectCommand(),
+            new RunProjectCommand()
         ]);
     }
 

@@ -4,6 +4,11 @@
 namespace DockerCi\DockerCi;
 
 
+use DataProvider\DockerCiDataProvider;
+use DataProvider\ProjectDataProvider;
+use DockerCi\Docker\DockerFacade;
+use DockerCi\DockerCi\Business\Ci\Prepare;
+use DockerCi\DockerCi\Business\Ci\PrepareInterface;
 use DockerCi\DockerCi\Business\Ci\Runner;
 use DockerCi\DockerCi\Business\Ci\RunnerInterface;
 use DockerCi\DockerCi\Business\Project\Hydrator\ProjectHydrator;
@@ -11,6 +16,7 @@ use DockerCi\DockerCi\Business\Project\Hydrator\ProjectHydratorInterface;
 use DockerCi\DockerCi\Business\Project\Persistor\ProjectWriter;
 use DockerCi\DockerCi\Business\Project\Persistor\ProjectWriterInterface;
 use DockerCi\Git\GitClient;
+use DockerCi\Shell\ShellFacade;
 use DockerCi\StepEngine\Business\Step\StepCollection;
 use DockerCi\StepEngine\StepEngineFacade;
 use Orm\Xervice\DockerCi\Persistence\ProjectQuery;
@@ -29,6 +35,21 @@ class DockerCiFactory extends AbstractFactory
         return new Runner(
             $this->getStepEngineFacade(),
             $this->getStepCollection()
+        );
+    }
+
+    /**
+     * @param \DataProvider\ProjectDataProvider $projectDataProvider
+     *
+     * @return \DockerCi\DockerCi\Business\Ci\Prepare
+     * @throws \Xervice\Config\Exception\ConfigNotFound
+     */
+    public function createCiPrepare(ProjectDataProvider $projectDataProvider): PrepareInterface
+    {
+        return new Prepare(
+            $projectDataProvider,
+            $this->createProjectHydrator(),
+            $this->getConfig()->getBuildDir()
         );
     }
 
@@ -66,6 +87,22 @@ class DockerCiFactory extends AbstractFactory
     public function getStepEngineFacade(): StepEngineFacade
     {
         return $this->getDependency(DockerCiDependencyProvider::STEP_ENGINE_FACADE);
+    }
+
+    /**
+     * @return \DockerCi\Shell\ShellFacade
+     */
+    public function getShellFacade(): ShellFacade
+    {
+        return $this->getDependency(DockerCiDependencyProvider::SHELL_FACADE);
+    }
+
+    /**
+     * @return \DockerCi\Docker\DockerFacade
+     */
+    public function getDockerFacade(): DockerFacade
+    {
+        return $this->getDependency(DockerCiDependencyProvider::DOCKER_FACADE);
     }
     
     /**
