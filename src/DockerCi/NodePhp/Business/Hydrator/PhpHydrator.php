@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 
 namespace DockerCi\NodePhp\Business\Hydrator;
@@ -43,7 +44,7 @@ class PhpHydrator implements PhpHydratorInterface
         $this->validateConfig();
 
         $phpConfig = new PhpConfigDataProvider();
-        $phpConfig->setVersion($this->data['version']);
+        $phpConfig->setVersion((string)$this->data['version']);
 
         if (isset($this->data['extensions'])) {
             $phpConfig->setExtensions($this->data['extensions']);
