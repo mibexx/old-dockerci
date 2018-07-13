@@ -6,6 +6,7 @@ namespace DockerCi\Git;
 
 
 use DataProvider\GitArchiveDataProvider;
+use DataProvider\GitCloneDataProvider;
 use Xervice\Core\Client\AbstractClient;
 
 /**
@@ -15,13 +16,13 @@ use Xervice\Core\Client\AbstractClient;
 class GitClient extends AbstractClient
 {
     /**
-     * @param \DataProvider\GitArchiveDataProvider $archiveDataProvider
+     * @param \DataProvider\GitCloneDataProvider $dataProvider
      *
      * @return string
      * @throws \Xervice\Config\Exception\ConfigNotFound
      */
-    public function archive(GitArchiveDataProvider $archiveDataProvider): string
+    public function clone(GitCloneDataProvider $dataProvider): string
     {
-        return $this->getFactory()->createArchive()->archive($archiveDataProvider);
+        return $this->getFactory()->createClone()->clone($dataProvider);
     }
 }

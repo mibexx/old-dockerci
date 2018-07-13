@@ -12,6 +12,14 @@ use Xervice\DataProvider\DataProvider\DataProviderInterface;
 
 abstract class AbstractStep extends StepEngineAbstractStep
 {
+    public function preCheck(): void
+    {
+    }
+
+    public function postCheck(): void
+    {
+    }
+
     /**
      * @return \DataProvider\ProjectDataProvider
      */

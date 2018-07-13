@@ -6,9 +6,10 @@ namespace DockerCi\Git\Business\Functions;
 
 
 use DataProvider\GitArchiveDataProvider;
+use DataProvider\GitCloneDataProvider;
 use DockerCi\Git\Business\Git\GitShellInterface;
 
-class Archive implements ArchiveInterface
+class GitClone implements GitCloneInterface
 {
     /**
      * @var \DockerCi\Git\Business\Git\GitShellInterface
@@ -30,14 +31,12 @@ class Archive implements ArchiveInterface
      *
      * @return string
      */
-    public function archive(GitArchiveDataProvider $archiveDataProvider): string
+    public function clone(GitCloneDataProvider $dataProvider): string
     {
         return $this->gitShell->runGit(
-            'archive --remote=%s HEAD:%s %s | tar -x -C %s',
-            $archiveDataProvider->getRemote(),
-            $archiveDataProvider->getPath(),
-            $archiveDataProvider->getFilename(),
-            $archiveDataProvider->getTarget()
+            'clone %s %s',
+            $dataProvider->getRemote(),
+            $dataProvider->getTarget()
         );
     }
 

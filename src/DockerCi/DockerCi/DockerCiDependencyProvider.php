@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace DockerCi\DockerCi;
 
 
+use DockerCi\DockerCi\Business\Ci\Steps\CloneProject;
 use DockerCi\DockerCi\Business\Ci\Steps\PrepareWorkdir;
 use DockerCi\StepEngine\Business\Step\StepCollection;
 use function foo\func;
@@ -64,7 +65,8 @@ class DockerCiDependencyProvider extends AbstractProvider
     protected function getSteps(): array
     {
         return [
-            new PrepareWorkdir()
+            new PrepareWorkdir(),
+            new CloneProject()
         ];
     }
 }

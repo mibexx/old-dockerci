@@ -91,7 +91,7 @@ class RunProjectCommand extends AbstractDockerCiCommand
     {
         $project = new ProjectDataProvider();
         $project->setProjectId(
-            $input->getArgument('project_id')
+            (int) $input->getArgument('project_id')
         );
         return $project;
     }

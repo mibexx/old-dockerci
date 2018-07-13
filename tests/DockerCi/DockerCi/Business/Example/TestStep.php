@@ -35,4 +35,12 @@ class TestStep extends AbstractStep
         return $this->dataProvider;
     }
 
+    /**
+     * @return bool
+     */
+    public function isNeeded(): bool
+    {
+        return true;
+    }
+
 }

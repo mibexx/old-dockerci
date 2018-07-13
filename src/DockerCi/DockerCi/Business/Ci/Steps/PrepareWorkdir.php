@@ -12,11 +12,6 @@ use DockerCi\DockerCi\Business\Ci\Exception\CiException;
  */
 class PrepareWorkdir extends AbstractStep
 {
-    public function preCheck(): void
-    {
-
-    }
-
     /**
      * @throws \DockerCi\DockerCi\Business\Ci\Exception\CiException
      */

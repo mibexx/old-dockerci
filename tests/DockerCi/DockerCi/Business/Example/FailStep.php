@@ -16,4 +16,12 @@ class FailStep extends TestStep implements StepInterface
     {
         throw new StepException('Test Exception');
     }
+
+    /**
+     * @return bool
+     */
+    public function isNeeded(): bool
+    {
+        return true;
+    }
 }

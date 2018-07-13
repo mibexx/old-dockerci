@@ -2,10 +2,12 @@
 namespace DockerCiTest\Git\Business\Functions;
 
 use DataProvider\GitArchiveDataProvider;
+use DataProvider\GitCloneDataProvider;
 use DockerCi\Git\Business\Functions\Archive;
+use DockerCi\Git\Business\Functions\GitClone;
 use DockerCi\Git\Business\Git\GitShell;
 
-class ArchiveTest extends \Codeception\Test\Unit
+class GitCloneTest extends \Codeception\Test\Unit
 {
 
     /**
@@ -16,13 +18,11 @@ class ArchiveTest extends \Codeception\Test\Unit
      * @group Archive
      * @group Unit
      */
-    public function testArchive()
+    public function testClone()
     {
-        $dataProvider = new GitArchiveDataProvider();
+        $dataProvider = new GitCloneDataProvider();
         $dataProvider
             ->setRemote('remote')
-            ->setPath('path')
-            ->setFilename('filename')
             ->setTarget('target');
 
         $gitShell = $this
@@ -35,15 +35,13 @@ class ArchiveTest extends \Codeception\Test\Unit
             ->expects($this->once())
             ->method('runGit')
             ->with(
-                $this->equalTo('archive --remote=%s HEAD:%s %s | tar -x -C %s'),
+                $this->equalTo('clone %s %s'),
                 $this->equalTo('remote'),
-                $this->equalTo('path'),
-                $this->equalTo('filename'),
                 $this->equalTo('target')
             )
             ->willReturn('Testing');
 
-        $archive = new Archive($gitShell);
-        $archive->archive($dataProvider);
+        $archive = new GitClone($gitShell);
+        $archive->clone($dataProvider);
     }
 }

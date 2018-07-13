@@ -7,6 +7,8 @@ namespace DockerCi\Git;
 
 use DockerCi\Git\Business\Functions\Archive;
 use DockerCi\Git\Business\Functions\ArchiveInterface;
+use DockerCi\Git\Business\Functions\GitClone;
+use DockerCi\Git\Business\Functions\GitCloneInterface;
 use DockerCi\Git\Business\Git\GitShell;
 use DockerCi\Git\Business\Git\GitShellInterface;
 use DockerCi\Shell\ShellFacade;
@@ -18,12 +20,12 @@ use Xervice\Core\Factory\AbstractFactory;
 class GitFactory extends AbstractFactory
 {
     /**
-     * @return \DockerCi\Git\Business\Functions\Archive
+     * @return \DockerCi\Git\Business\Functions\GitClone
      * @throws \Xervice\Config\Exception\ConfigNotFound
      */
-    public function createArchive(): ArchiveInterface
+    public function createClone(): GitCloneInterface
     {
-        return new Archive(
+        return new GitClone(
             $this->createGitShell()
         );
     }

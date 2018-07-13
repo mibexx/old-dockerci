@@ -41,9 +41,11 @@ class StepEngine implements StepEngineInterface
     {
         foreach ($this->stepCollection as $step) {
             $step->setData($this->dataProvider);
-            $step->preCheck();
-            $step->execute();
-            $step->postCheck();
+            if ($step->isNeeded()) {
+                $step->preCheck();
+                $step->execute();
+                $step->postCheck();
+            }
         }
 
         return $this->dataProvider;

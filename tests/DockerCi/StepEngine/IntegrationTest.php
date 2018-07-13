@@ -85,15 +85,23 @@ class IntegrationTest extends \Codeception\Test\Unit
      */
     private function createStepMock(): AbstractStep
     {
-        return $this
+        $step = $this
             ->getMockBuilder(AbstractStep::class)
             ->setMethods(
                 [
                     'preCheck',
                     'postCheck',
-                    'execute'
+                    'execute',
+                    'isNeeded'
                 ]
             )
             ->getMock();
+
+        $step
+            ->expects($this->once())
+            ->method('isNeeded')
+            ->willReturn(true);
+
+        return $step;
     }
 }

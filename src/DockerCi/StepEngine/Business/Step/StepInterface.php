@@ -25,6 +25,11 @@ interface StepInterface
     public function execute(): void;
 
     /**
+     * @return bool
+     */
+    public function isNeeded(): bool;
+
+    /**
      * @param \Xervice\DataProvider\DataProvider\DataProviderInterface $dataProvider
      */
     public function setData(DataProviderInterface $dataProvider): void;
