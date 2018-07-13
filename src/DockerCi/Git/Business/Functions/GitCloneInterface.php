@@ -7,7 +7,7 @@ use DataProvider\GitCloneDataProvider;
 interface GitCloneInterface
 {
     /**
-     * @param \DataProvider\GitArchiveDataProvider $archiveDataProvider
+     * @param \DataProvider\GitCloneDataProvider $dataProvider
      *
      * @return string
      */
