@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace DockerCi\Git\Business\Functions;
 
 
-use DataProvider\GitArchiveDataProvider;
 use DataProvider\GitCloneDataProvider;
-use DockerCi\Git\Business\Git\GitShellInterface;
 
 class GitClone extends AbstractFunction implements GitCloneInterface
 {
