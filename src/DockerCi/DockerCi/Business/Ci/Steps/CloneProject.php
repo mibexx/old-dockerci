@@ -4,7 +4,6 @@
 namespace DockerCi\DockerCi\Business\Ci\Steps;
 
 
-use DataProvider\GitArchiveDataProvider;
 use DataProvider\GitCloneDataProvider;
 use DockerCi\DockerCi\Business\Ci\Exception\CiException;
 
