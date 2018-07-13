@@ -27,7 +27,7 @@ class GitClone implements GitCloneInterface
     }
 
     /**
-     * @param \DataProvider\GitArchiveDataProvider $archiveDataProvider
+     * @param \DataProvider\GitCloneDataProvider $dataProvider
      *
      * @return string
      */
