@@ -18,10 +18,29 @@ class GitClient extends AbstractClient
      * @param \DataProvider\GitCloneDataProvider $dataProvider
      *
      * @return string
-     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     public function clone(GitCloneDataProvider $dataProvider): string
     {
         return $this->getFactory()->createClone()->clone($dataProvider);
+    }
+
+    /**
+     * @param string $gitDir
+     *
+     * @return string
+     */
+    public function resetHard(string $gitDir): string
+    {
+        return $this->getFactory()->createReset()->resetHard($gitDir);
+    }
+
+    /**
+     * @param string $gitDir
+     *
+     * @return string
+     */
+    public function pull(string $gitDir): string
+    {
+        return $this->getFactory()->createPull()->pull($gitDir);
     }
 }

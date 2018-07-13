@@ -9,19 +9,19 @@ use DataProvider\GitArchiveDataProvider;
 use DataProvider\GitCloneDataProvider;
 use DockerCi\Git\Business\Git\GitShellInterface;
 
-class GitClone extends AbstractFunction implements GitCloneInterface
+class GitPull extends AbstractFunction implements GitPullInterface
 {
     /**
-     * @param \DataProvider\GitCloneDataProvider $dataProvider
+     * @param string $gitDir
      *
      * @return string
      */
-    public function clone(GitCloneDataProvider $dataProvider): string
+    public function pull(string $gitDir): string
     {
         return $this->gitShell->runGit(
-            'clone %s %s',
-            $dataProvider->getRemote(),
-            $dataProvider->getTarget()
+            '--git-dir=%s --work-tree=%s pull',
+            $gitDir . '/.git',
+            $gitDir
         );
     }
 

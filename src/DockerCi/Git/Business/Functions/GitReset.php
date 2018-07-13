@@ -9,19 +9,18 @@ use DataProvider\GitArchiveDataProvider;
 use DataProvider\GitCloneDataProvider;
 use DockerCi\Git\Business\Git\GitShellInterface;
 
-class GitClone extends AbstractFunction implements GitCloneInterface
+class GitReset extends AbstractFunction implements GitResetInterface
 {
     /**
-     * @param \DataProvider\GitCloneDataProvider $dataProvider
+     * @param string $gitDir
      *
      * @return string
      */
-    public function clone(GitCloneDataProvider $dataProvider): string
+    public function resetHard(string $gitDir): string
     {
         return $this->gitShell->runGit(
-            'clone %s %s',
-            $dataProvider->getRemote(),
-            $dataProvider->getTarget()
+            'reset --hard HEAD %s',
+            $gitDir
         );
     }
 
