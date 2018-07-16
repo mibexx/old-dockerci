@@ -18,6 +18,8 @@ build:
 
     redis: true
 
+    docker: true
+
   dependencies:
     before:
       - psql -c "CREATE DATABASE dockerci WITH OWNER = scrutinizer ENCODING = 'UTF8' LC_COLLATE = 'en_US.UTF-8' TEMPLATE template0"
