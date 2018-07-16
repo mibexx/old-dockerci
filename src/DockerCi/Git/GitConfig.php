@@ -13,7 +13,6 @@ class GitConfig extends AbstractConfig
 
     /**
      * @return string
-     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     public function getGitCommand(): string
     {

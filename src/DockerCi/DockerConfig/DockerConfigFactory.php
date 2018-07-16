@@ -13,9 +13,6 @@ use DockerCi\DockerConfig\Business\Reader\ReaderInterface;
 use DockerCi\DockerConfig\Business\Reader\YamlReader;
 use Xervice\Core\Factory\AbstractFactory;
 
-/**
- * @method \DockerCi\DockerConfig\DockerConfigConfig getConfig()
- */
 class DockerConfigFactory extends AbstractFactory
 {
     /**

@@ -12,6 +12,9 @@ use DockerCi\DockerCi\Business\Ci\Exception\CiException;
  */
 class CloneProject extends AbstractStep
 {
+    /**
+     * @throws \DockerCi\DockerCi\Business\Ci\Exception\CiException
+     */
     public function preCheck(): void
     {
         if (!is_dir($this->getData()->getBuilddir())) {
@@ -19,7 +22,9 @@ class CloneProject extends AbstractStep
         }
     }
 
-
+    /**
+     * @throws \DockerCi\DockerCi\Business\Ci\Exception\CiException
+     */
     public function postCheck(): void
     {
         if (!is_dir($this->getData()->getBuilddir() . '/.git')) {
@@ -33,7 +38,6 @@ class CloneProject extends AbstractStep
 
     /**
      * @throws \Core\Locator\Dynamic\ServiceNotParseable
-     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     public function execute(): void
     {

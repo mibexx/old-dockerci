@@ -9,7 +9,6 @@ use DataProvider\ProjectDataProvider;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Xervice\Core\Locator\Locator;
 
 /**
  * @method \DockerCi\DockerCi\DockerCiFacade getFacade()
@@ -37,7 +36,6 @@ class AddProjectCommand extends AbstractDockerCiCommand
      * @return int|null|void
      * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
      * @throws \Core\Locator\Dynamic\ServiceNotParseable
-     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {

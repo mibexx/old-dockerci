@@ -12,7 +12,6 @@ use Xervice\Database\DatabaseFacade;
 abstract class AbstractDockerCiCommand extends AbstractCommand
 {
     /**
-     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     public function initDatabase(): void
     {

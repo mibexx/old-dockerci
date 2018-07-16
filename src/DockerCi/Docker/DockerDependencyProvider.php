@@ -16,12 +16,12 @@ class DockerDependencyProvider extends AbstractProvider
     public const SHELL_FACADE = 'shell.facade';
 
     /**
-     * @param \Xervice\Core\Dependency\DependencyProviderInterface $container
+     * @param \Xervice\Core\Dependency\DependencyProviderInterface $dependencyProvider
      */
-    public function handleDependencies(DependencyProviderInterface $container): void
+    public function handleDependencies(DependencyProviderInterface $dependencyProvider): void
     {
-        $container[self::SHELL_FACADE] = function(DependencyProviderInterface $container) {
-            return $container->getLocator()->shell()->facade();
+        $dependencyProvider[self::SHELL_FACADE] = function (DependencyProviderInterface $dependencyProvider) {
+            return $dependencyProvider->getLocator()->shell()->facade();
         };
     }
 }

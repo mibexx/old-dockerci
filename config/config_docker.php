@@ -1,7 +1,7 @@
 <?php
 
-use DockerCi\ExceptionHandler\ExceptionHandlerConfig;
 use Xervice\Database\DatabaseConfig;
+use Xervice\ExceptionHandler\ExceptionHandlerConfig;
 use Xervice\Redis\RedisConfig;
 
 $config[ExceptionHandlerConfig::IS_DEBUG] = true;

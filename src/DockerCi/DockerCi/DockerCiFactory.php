@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace DockerCi\DockerCi;
 
 
-use DataProvider\DockerCiDataProvider;
 use DataProvider\ProjectDataProvider;
 use DockerCi\Docker\DockerFacade;
 use DockerCi\DockerCi\Business\Ci\Prepare;
@@ -16,13 +15,13 @@ use DockerCi\DockerCi\Business\Project\Hydrator\ProjectHydrator;
 use DockerCi\DockerCi\Business\Project\Hydrator\ProjectHydratorInterface;
 use DockerCi\DockerCi\Business\Project\Persistor\ProjectWriter;
 use DockerCi\DockerCi\Business\Project\Persistor\ProjectWriterInterface;
-use DockerCi\ExceptionHandler\ExceptionHandlerFacade;
 use DockerCi\Git\GitClient;
 use DockerCi\Shell\ShellFacade;
 use DockerCi\StepEngine\Business\Step\StepCollection;
 use DockerCi\StepEngine\StepEngineFacade;
 use Orm\Xervice\DockerCi\Persistence\ProjectQuery;
 use Xervice\Core\Factory\AbstractFactory;
+use Xervice\ExceptionHandler\ExceptionHandlerFacade;
 
 /**
  * @method \DockerCi\DockerCi\DockerCiConfig getConfig()
@@ -44,7 +43,6 @@ class DockerCiFactory extends AbstractFactory
      * @param \DataProvider\ProjectDataProvider $projectDataProvider
      *
      * @return \DockerCi\DockerCi\Business\Ci\Prepare
-     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     public function createCiPrepare(ProjectDataProvider $projectDataProvider): PrepareInterface
     {
@@ -108,7 +106,7 @@ class DockerCiFactory extends AbstractFactory
     }
 
     /**
-     * @return \DockerCi\ExceptionHandler\ExceptionHandlerFacade
+     * @return \Xervice\ExceptionHandler\ExceptionHandlerFacade
      */
     public function getExceptionHandlerFacade(): ExceptionHandlerFacade
     {

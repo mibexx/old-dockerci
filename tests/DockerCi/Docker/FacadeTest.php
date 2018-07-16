@@ -16,7 +16,6 @@ class FacadeTest extends \Codeception\Test\Unit
      * @group Facade
      * @group Integration
      * @throws \Core\Locator\Dynamic\ServiceNotParseable
-     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     public function testRunDockerCommand()
     {

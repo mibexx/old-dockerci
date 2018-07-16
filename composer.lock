@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c678b5bc8cc72cc302fd043c6a56df7c",
+    "content-hash": "0c0e33eac32c2bbb8f77bcd39f5c9227",
     "packages": [
         {
             "name": "nette/php-generator",
@@ -151,56 +151,6 @@
             "time": "2018-05-02T17:16:08+00:00"
         },
         {
-            "name": "pimple/pimple",
-            "version": "v3.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/silexphp/Pimple.git",
-                "reference": "9e403941ef9d65d20cba7d54e29fe906db42cf32"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/9e403941ef9d65d20cba7d54e29fe906db42cf32",
-                "reference": "9e403941ef9d65d20cba7d54e29fe906db42cf32",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "psr/container": "^1.0"
-            },
-            "require-dev": {
-                "symfony/phpunit-bridge": "^3.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Pimple": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                }
-            ],
-            "description": "Pimple, a simple Dependency Injection Container",
-            "homepage": "http://pimple.sensiolabs.org",
-            "keywords": [
-                "container",
-                "dependency injection"
-            ],
-            "time": "2018-01-21T07:42:36+00:00"
-        },
-        {
             "name": "predis/predis",
             "version": "v1.1.1",
             "source": {
@@ -313,55 +263,6 @@
                 "persistence"
             ],
             "time": "2018-02-19T12:58:55+00:00"
-        },
-        {
-            "name": "psr/container",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/container.git",
-                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
-                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Container\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common Container Interface (PHP FIG PSR-11)",
-            "homepage": "https://github.com/php-fig/container",
-            "keywords": [
-                "PSR-11",
-                "container",
-                "container-interface",
-                "container-interop",
-                "psr"
-            ],
-            "time": "2017-02-14T16:28:37+00:00"
         },
         {
             "name": "psr/log",
@@ -1023,16 +924,16 @@
         },
         {
             "name": "xervice/config",
-            "version": "1.0.1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/config.git",
-                "reference": "6c994780fb152d39c09f41878f860f2f715db7c2"
+                "reference": "5a4f88054dd8632bd19e67e68c227bd533b1e69e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/config/zipball/6c994780fb152d39c09f41878f860f2f715db7c2",
-                "reference": "6c994780fb152d39c09f41878f860f2f715db7c2",
+                "url": "https://api.github.com/repos/xervice/config/zipball/5a4f88054dd8632bd19e67e68c227bd533b1e69e",
+                "reference": "5a4f88054dd8632bd19e67e68c227bd533b1e69e",
                 "shasum": ""
             },
             "require-dev": {
@@ -1059,25 +960,25 @@
                 }
             ],
             "description": "Config environment to xervice components",
-            "time": "2018-07-09T06:57:35+00:00"
+            "time": "2018-07-13T18:15:54+00:00"
         },
         {
             "name": "xervice/console",
-            "version": "1.0.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/console.git",
-                "reference": "85a11127181d91e8bc7592e38de7c71a2a76f5f9"
+                "reference": "78db7bb89118bfc71eff5093f0c2893f352b4f10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/console/zipball/85a11127181d91e8bc7592e38de7c71a2a76f5f9",
-                "reference": "85a11127181d91e8bc7592e38de7c71a2a76f5f9",
+                "url": "https://api.github.com/repos/xervice/console/zipball/78db7bb89118bfc71eff5093f0c2893f352b4f10",
+                "reference": "78db7bb89118bfc71eff5093f0c2893f352b4f10",
                 "shasum": ""
             },
             "require": {
                 "symfony/console": "4.0.*",
-                "xervice/core": "^1.0.0"
+                "xervice/core": "^2.0.1"
             },
             "require-dev": {
                 "codeception/codeception": "*",
@@ -1105,26 +1006,25 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-07-09T06:58:49+00:00"
+            "time": "2018-07-13T19:24:36+00:00"
         },
         {
             "name": "xervice/core",
-            "version": "1.1.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/core.git",
-                "reference": "d4d41786e096e4edf2054fc9cb56fd5c0a7350fb"
+                "reference": "0bd3f55445db935a378ac336edb330197a1a6c72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/core/zipball/d4d41786e096e4edf2054fc9cb56fd5c0a7350fb",
-                "reference": "d4d41786e096e4edf2054fc9cb56fd5c0a7350fb",
+                "url": "https://api.github.com/repos/xervice/core/zipball/0bd3f55445db935a378ac336edb330197a1a6c72",
+                "reference": "0bd3f55445db935a378ac336edb330197a1a6c72",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.0",
-                "pimple/pimple": "3.2.*",
-                "xervice/config": "^1.0.0"
+                "xervice/config": "^2.0.0"
             },
             "require-dev": {
                 "codeception/codeception": "*",
@@ -1151,27 +1051,27 @@
                 }
             ],
             "description": "Xervice core functionality",
-            "time": "2018-07-09T06:58:11+00:00"
+            "time": "2018-07-16T06:48:28+00:00"
         },
         {
             "name": "xervice/data-provider",
-            "version": "1.0.3",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/data-provider.git",
-                "reference": "9aeaca5b0bd56df881d1cbf0505d1622887f6266"
+                "reference": "cc05b45c6252687aa64ed1ec150617c909c63763"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/data-provider/zipball/9aeaca5b0bd56df881d1cbf0505d1622887f6266",
-                "reference": "9aeaca5b0bd56df881d1cbf0505d1622887f6266",
+                "url": "https://api.github.com/repos/xervice/data-provider/zipball/cc05b45c6252687aa64ed1ec150617c909c63763",
+                "reference": "cc05b45c6252687aa64ed1ec150617c909c63763",
                 "shasum": ""
             },
             "require": {
                 "nette/php-generator": "3.1.*",
                 "php": ">=7.1.0",
                 "symfony/finder": "^4.1.1",
-                "xervice/console": "^1.0.0"
+                "xervice/console": "^1.1.0"
             },
             "require-dev": {
                 "codeception/codeception": "*",
@@ -1197,26 +1097,26 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-07-13T11:17:44+00:00"
+            "time": "2018-07-13T19:53:23+00:00"
         },
         {
             "name": "xervice/database",
-            "version": "1.0.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/database.git",
-                "reference": "4f0d4008d8b56d237d5e13c19a03b26ed36d95fc"
+                "reference": "87bf375228ef39ea7637ce791dca4a413cc56921"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/database/zipball/4f0d4008d8b56d237d5e13c19a03b26ed36d95fc",
-                "reference": "4f0d4008d8b56d237d5e13c19a03b26ed36d95fc",
+                "url": "https://api.github.com/repos/xervice/database/zipball/87bf375228ef39ea7637ce791dca4a413cc56921",
+                "reference": "87bf375228ef39ea7637ce791dca4a413cc56921",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.0",
                 "propel/propel": "2.0.0-alpha8",
-                "xervice/data-provider": "^1.0.0"
+                "xervice/data-provider": "^1.1.0"
             },
             "require-dev": {
                 "codeception/codeception": "*",
@@ -1243,27 +1143,27 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-07-09T07:00:47+00:00"
+            "time": "2018-07-15T12:01:16+00:00"
         },
         {
             "name": "xervice/redis",
-            "version": "1.0.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/redis.git",
-                "reference": "153a922381ca7572c918ccb3760a8fb9c650eb35"
+                "reference": "35352beae6fadd816fac56865693522b7bbd68fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/redis/zipball/153a922381ca7572c918ccb3760a8fb9c650eb35",
-                "reference": "153a922381ca7572c918ccb3760a8fb9c650eb35",
+                "url": "https://api.github.com/repos/xervice/redis/zipball/35352beae6fadd816fac56865693522b7bbd68fa",
+                "reference": "35352beae6fadd816fac56865693522b7bbd68fa",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.0",
                 "predis/predis": "^1.1.0",
-                "xervice/data-provider": "^1.0.0",
-                "xervice/session": "^1.0.0"
+                "xervice/data-provider": "^1.1.0",
+                "xervice/session": "^1.1.0"
             },
             "require-dev": {
                 "codeception/codeception": "*",
@@ -1289,26 +1189,26 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-07-09T07:01:24+00:00"
+            "time": "2018-07-14T06:57:23+00:00"
         },
         {
             "name": "xervice/session",
-            "version": "1.0.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/session.git",
-                "reference": "b0a2325fecf1c1071f23b64f7d0e468b09aea9ba"
+                "reference": "25e62f009dee23ab12400d2a2feeae2044d7a797"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/session/zipball/b0a2325fecf1c1071f23b64f7d0e468b09aea9ba",
-                "reference": "b0a2325fecf1c1071f23b64f7d0e468b09aea9ba",
+                "url": "https://api.github.com/repos/xervice/session/zipball/25e62f009dee23ab12400d2a2feeae2044d7a797",
+                "reference": "25e62f009dee23ab12400d2a2feeae2044d7a797",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.0",
                 "symfony/http-foundation": "4.0.*",
-                "xervice/core": "^1.0.0"
+                "xervice/core": "^2.0.0"
             },
             "require-dev": {
                 "codeception/codeception": "*",
@@ -1334,7 +1234,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-07-09T07:00:01+00:00"
+            "time": "2018-07-14T04:26:49+00:00"
         }
     ],
     "packages-dev": [
@@ -1908,6 +1808,46 @@
             "time": "2018-06-11T23:09:50+00:00"
         },
         {
+            "name": "pdepend/pdepend",
+            "version": "2.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pdepend/pdepend.git",
+                "reference": "9daf26d0368d4a12bed1cacae1a9f3a6f0adf239"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/9daf26d0368d4a12bed1cacae1a9f3a6f0adf239",
+                "reference": "9daf26d0368d4a12bed1cacae1a9f3a6f0adf239",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.7",
+                "symfony/config": "^2.3.0|^3|^4",
+                "symfony/dependency-injection": "^2.3.0|^3|^4",
+                "symfony/filesystem": "^2.3.0|^3|^4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8|^5.7",
+                "squizlabs/php_codesniffer": "^2.0.0"
+            },
+            "bin": [
+                "src/bin/pdepend"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PDepend\\": "src/main/php/PDepend"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Official version of pdepend to be handled with Composer",
+            "time": "2017-12-13T13:21:38+00:00"
+        },
+        {
             "name": "phar-io/manifest",
             "version": "1.0.1",
             "source": {
@@ -2160,6 +2100,72 @@
                 }
             ],
             "time": "2017-07-14T14:27:02+00:00"
+        },
+        {
+            "name": "phpmd/phpmd",
+            "version": "2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpmd/phpmd.git",
+                "reference": "4e9924b2c157a3eb64395460fcf56b31badc8374"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/4e9924b2c157a3eb64395460fcf56b31badc8374",
+                "reference": "4e9924b2c157a3eb64395460fcf56b31badc8374",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "pdepend/pdepend": "^2.5",
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0",
+                "squizlabs/php_codesniffer": "^2.0"
+            },
+            "bin": [
+                "src/bin/phpmd"
+            ],
+            "type": "project",
+            "autoload": {
+                "psr-0": {
+                    "PHPMD\\": "src/main/php"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Manuel Pichler",
+                    "email": "github@manuel-pichler.de",
+                    "homepage": "https://github.com/manuelpichler",
+                    "role": "Project Founder"
+                },
+                {
+                    "name": "Other contributors",
+                    "homepage": "https://github.com/phpmd/phpmd/graphs/contributors",
+                    "role": "Contributors"
+                },
+                {
+                    "name": "Marc Würth",
+                    "email": "ravage@bluewin.ch",
+                    "homepage": "https://github.com/ravage84",
+                    "role": "Project Maintainer"
+                }
+            ],
+            "description": "PHPMD is a spin-off project of PHP Depend and aims to be a PHP equivalent of the well known Java tool PMD.",
+            "homepage": "http://phpmd.org/",
+            "keywords": [
+                "mess detection",
+                "mess detector",
+                "pdepend",
+                "phpmd",
+                "pmd"
+            ],
+            "time": "2017-01-20T14:41:10+00:00"
         },
         {
             "name": "phpspec/prophecy",
@@ -2608,6 +2614,55 @@
                 "xunit"
             ],
             "time": "2018-05-29T13:54:20+00:00"
+        },
+        {
+            "name": "psr/container",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2017-02-14T16:28:37+00:00"
         },
         {
             "name": "psr/http-message",
@@ -3223,6 +3278,57 @@
             "time": "2016-10-03T07:35:21+00:00"
         },
         {
+            "name": "squizlabs/php_codesniffer",
+            "version": "3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "d86873af43b4aa9d1f39a3601cc0cfcf02b25266"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/d86873af43b4aa9d1f39a3601cc0cfcf02b25266",
+                "reference": "d86873af43b4aa9d1f39a3601cc0cfcf02b25266",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "bin": [
+                "bin/phpcs",
+                "bin/phpcbf"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "http://www.squizlabs.com/php-codesniffer",
+            "keywords": [
+                "phpcs",
+                "standards"
+            ],
+            "time": "2018-06-06T23:58:19+00:00"
+        },
+        {
             "name": "symfony/browser-kit",
             "version": "v4.1.1",
             "source": {
@@ -3331,6 +3437,77 @@
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
             "time": "2018-05-30T07:26:09+00:00"
+        },
+        {
+            "name": "symfony/dependency-injection",
+            "version": "v4.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dependency-injection.git",
+                "reference": "e761828a85d7dfc00b927f94ccbe1851ce0b6535"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/e761828a85d7dfc00b927f94ccbe1851ce0b6535",
+                "reference": "e761828a85d7dfc00b927f94ccbe1851ce0b6535",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "psr/container": "^1.0"
+            },
+            "conflict": {
+                "symfony/config": "<4.1.1",
+                "symfony/finder": "<3.4",
+                "symfony/proxy-manager-bridge": "<3.4",
+                "symfony/yaml": "<3.4"
+            },
+            "provide": {
+                "psr/container-implementation": "1.0"
+            },
+            "require-dev": {
+                "symfony/config": "~4.1",
+                "symfony/expression-language": "~3.4|~4.0",
+                "symfony/yaml": "~3.4|~4.0"
+            },
+            "suggest": {
+                "symfony/config": "",
+                "symfony/expression-language": "For using expressions in service container configuration",
+                "symfony/finder": "For using double-star glob patterns or when GLOB_BRACE portability is required",
+                "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\DependencyInjection\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DependencyInjection Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-06-25T11:12:43+00:00"
         },
         {
             "name": "symfony/dom-crawler",

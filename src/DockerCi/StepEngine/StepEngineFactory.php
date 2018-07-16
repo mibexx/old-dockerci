@@ -11,9 +11,6 @@ use DockerCi\StepEngine\Business\Step\StepCollection;
 use Xervice\Core\Factory\AbstractFactory;
 use Xervice\DataProvider\DataProvider\DataProviderInterface;
 
-/**
- * @method \DockerCi\StepEngine\StepEngineConfig getConfig()
- */
 class StepEngineFactory extends AbstractFactory
 {
     /**
@@ -22,7 +19,10 @@ class StepEngineFactory extends AbstractFactory
      *
      * @return \DockerCi\StepEngine\Business\Engine\StepEngineInterface
      */
-    public function createStepEngine(StepCollection $stepCollection, DataProviderInterface $dataProvider): StepEngineInterface
+    public function createStepEngine(
+        StepCollection $stepCollection,
+        DataProviderInterface $dataProvider
+    ): StepEngineInterface
     {
         return new StepEngine(
             $stepCollection,

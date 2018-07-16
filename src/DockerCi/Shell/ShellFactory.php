@@ -13,9 +13,6 @@ use DockerCi\Shell\Business\Provider\Provider;
 use DockerCi\Shell\Business\Provider\ProviderInterface;
 use Xervice\Core\Factory\AbstractFactory;
 
-/**
- * @method \DockerCi\Shell\ShellConfig getConfig()
- */
 class ShellFactory extends AbstractFactory
 {
     /**

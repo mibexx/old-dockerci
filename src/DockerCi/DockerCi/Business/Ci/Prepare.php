@@ -32,6 +32,7 @@ class Prepare implements PrepareInterface
      *
      * @param \DataProvider\ProjectDataProvider $project
      * @param \DockerCi\DockerCi\Business\Project\Hydrator\ProjectHydratorInterface $projectHydrator
+     * @param string $builDir
      */
     public function __construct(
         ProjectDataProvider $project,

@@ -7,7 +7,6 @@ namespace DockerCi\DockerConfig\Business\Loader;
 
 use DataProvider\DockerConfigDataProvider;
 use DataProvider\DockerConfigFileListDataProvider;
-use DockerCi\DockerConfig\Business\Exception\ConfigException;
 use DockerCi\DockerConfig\Business\Hydrator\HydratorCollection;
 use DockerCi\DockerConfig\Business\Reader\ReaderInterface;
 

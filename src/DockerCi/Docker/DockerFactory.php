@@ -17,7 +17,6 @@ class DockerFactory extends AbstractFactory
 {
     /**
      * @return \DockerCi\Docker\Business\Shell\DockerShell
-     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     public function createDockerShell(): DockerShellInterface
     {

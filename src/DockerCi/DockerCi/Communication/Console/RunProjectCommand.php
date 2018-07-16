@@ -35,7 +35,6 @@ class RunProjectCommand extends AbstractDockerCiCommand
      * @return int|null|void
      * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
      * @throws \Core\Locator\Dynamic\ServiceNotParseable
-     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -60,8 +59,6 @@ class RunProjectCommand extends AbstractDockerCiCommand
      * @param $project
      *
      * @throws \Core\Locator\Dynamic\ServiceNotParseable
-     * @throws \DockerCi\StepEngine\Business\Exception\StepException
-     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     protected function runProjectCi(OutputInterface $output, $project): void
     {

@@ -18,7 +18,6 @@ class DockerFacade extends AbstractFacade
      * @param string ...$params
      *
      * @return string
-     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     public function runDockerCommand($command, ...$params): string
     {

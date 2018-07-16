@@ -9,7 +9,6 @@ use Xervice\Core\Locator\Locator;
 class DockerCi extends \Codeception\Module
 {
     /**
-     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     public function initDatabase(): void
     {

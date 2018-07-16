@@ -32,7 +32,6 @@ class FacadeTest extends \Codeception\Test\Unit
      * @throws \Core\Locator\Dynamic\ServiceNotParseable
      * @throws \DockerCi\DockerCi\Business\Project\Exception\ProjectException
      * @throws \Propel\Runtime\Exception\PropelException
-     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     protected function _before()
     {

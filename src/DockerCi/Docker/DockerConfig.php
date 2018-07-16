@@ -13,7 +13,6 @@ class DockerConfig extends AbstractConfig
 
     /**
      * @return string
-     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     public function getDockerCommand(): string
     {

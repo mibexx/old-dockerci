@@ -16,7 +16,7 @@ use Xervice\Core\Factory\AbstractFactory;
 class NodeRedisFactory extends AbstractFactory
 {
     /**
-     * @param string $data
+     * @param bool $data
      * @param \DataProvider\NodeDataProvider $nodeDataProvider
      *
      * @return \DockerCi\NodeRedis\Business\Hydrator\RedisHydrator

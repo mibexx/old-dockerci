@@ -14,7 +14,6 @@ class DockerCiConfig extends AbstractConfig
 
     /**
      * @return string
-     * @throws \Xervice\Config\Exception\ConfigNotFound
      */
     public function getBuildDir(): string
     {

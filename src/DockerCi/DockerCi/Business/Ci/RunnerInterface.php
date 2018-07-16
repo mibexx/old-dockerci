@@ -12,6 +12,7 @@ interface RunnerInterface
      * @param \DataProvider\DockerCiDataProvider $dataProvider
      *
      * @return \DataProvider\DockerCiDataProvider
+     * @throws \DockerCi\StepEngine\Business\Exception\StepException
      */
     public function run(DockerCiDataProvider $dataProvider): DataProviderInterface;
 }

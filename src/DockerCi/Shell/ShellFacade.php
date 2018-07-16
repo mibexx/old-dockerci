@@ -9,8 +9,6 @@ use Xervice\Core\Facade\AbstractFacade;
 
 /**
  * @method \DockerCi\Shell\ShellFactory getFactory()
- * @method \DockerCi\Shell\ShellConfig getConfig()
- * @method \DockerCi\Shell\ShellClient getClient()
  */
 class ShellFacade extends AbstractFacade
 {

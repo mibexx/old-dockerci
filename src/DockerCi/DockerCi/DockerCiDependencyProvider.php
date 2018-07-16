@@ -8,7 +8,6 @@ namespace DockerCi\DockerCi;
 use DockerCi\DockerCi\Business\Ci\Steps\CloneProject;
 use DockerCi\DockerCi\Business\Ci\Steps\PrepareWorkdir;
 use DockerCi\StepEngine\Business\Step\StepCollection;
-use function foo\func;
 use Xervice\Core\Dependency\DependencyProviderInterface;
 use Xervice\Core\Dependency\Provider\AbstractProvider;
 
@@ -28,31 +27,31 @@ class DockerCiDependencyProvider extends AbstractProvider
     public const STEP_COLLECTION = 'step.collection';
 
     /**
-     * @param \Xervice\Core\Dependency\DependencyProviderInterface $container
+     * @param \Xervice\Core\Dependency\DependencyProviderInterface $dependencyProvider
      */
-    public function handleDependencies(DependencyProviderInterface $container): void
+    public function handleDependencies(DependencyProviderInterface $dependencyProvider): void
     {
-        $container[self::GIT_CLIENT] = function(DependencyProviderInterface $container) {
-            return $container->getLocator()->git()->client();
+        $dependencyProvider[self::GIT_CLIENT] = function (DependencyProviderInterface $dependencyProvider) {
+            return $dependencyProvider->getLocator()->git()->client();
         };
 
-        $container[self::STEP_ENGINE_FACADE] = function(DependencyProviderInterface $container) {
-            return $container->getLocator()->stepEngine()->facade();
+        $dependencyProvider[self::STEP_ENGINE_FACADE] = function (DependencyProviderInterface $dependencyProvider) {
+            return $dependencyProvider->getLocator()->stepEngine()->facade();
         };
 
-        $container[self::SHELL_FACADE] = function(DependencyProviderInterface $container) {
-            return $container->getLocator()->shell()->facade();
+        $dependencyProvider[self::SHELL_FACADE] = function (DependencyProviderInterface $dependencyProvider) {
+            return $dependencyProvider->getLocator()->shell()->facade();
         };
 
-        $container[self::DOCKER_FACADE] = function(DependencyProviderInterface $container) {
-            return $container->getLocator()->docker()->facade();
+        $dependencyProvider[self::DOCKER_FACADE] = function (DependencyProviderInterface $dependencyProvider) {
+            return $dependencyProvider->getLocator()->docker()->facade();
         };
 
-        $container[self::EXCEPTION_HANDLER_FACADE] = function(DependencyProviderInterface $container) {
-            return $container->getLocator()->exceptionHandler()->facade();
+        $dependencyProvider[self::EXCEPTION_HANDLER_FACADE] = function (DependencyProviderInterface $dependencyProvider) {
+            return $dependencyProvider->getLocator()->exceptionHandler()->facade();
         };
 
-        $container[self::STEP_COLLECTION] = function() {
+        $dependencyProvider[self::STEP_COLLECTION] = function () {
             return new StepCollection(
                 $this->getSteps()
             );
