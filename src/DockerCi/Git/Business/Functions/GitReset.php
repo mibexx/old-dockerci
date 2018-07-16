@@ -15,10 +15,9 @@ class GitReset extends AbstractFunction implements GitResetInterface
     public function resetHard(string $gitDir): string
     {
         return $this->gitShell->runGit(
-            'reset --hard HEAD %s',
+            '--git-dir=%s --work-tree=%s reset --hard HEAD',
+            $gitDir . '/.git',
             $gitDir
         );
     }
-
-
 }

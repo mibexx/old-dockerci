@@ -28,12 +28,13 @@ class GitResetTest extends \Codeception\Test\Unit
             ->expects($this->once())
             ->method('runGit')
             ->with(
-                $this->equalTo('reset --hard HEAD %s'),
+                $this->equalTo('--git-dir=%s --work-tree=%s reset --hard HEAD'),
+                $this->equalTo('test-path/.git'),
                 $this->equalTo('test-path')
             )
             ->willReturn('Testing');
 
-        $archive = new GitReset($gitShell);
-        $archive->resetHard('test-path');
+        $reset = new GitReset($gitShell);
+        $reset->resetHard('test-path');
     }
 }

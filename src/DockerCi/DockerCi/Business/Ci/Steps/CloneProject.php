@@ -52,5 +52,4 @@ class CloneProject extends AbstractStep
             'Prepare'
         );
     }
-
 }

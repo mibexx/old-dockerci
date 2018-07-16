@@ -40,5 +40,4 @@ class PrepareWorkdir extends AbstractStep
             $this->addMessage('Creating builddir', 'Prepare');
         }
     }
-
 }

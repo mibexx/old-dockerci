@@ -7,6 +7,7 @@ namespace DockerCi\DockerCi;
 
 use DockerCi\DockerCi\Business\Ci\Steps\CloneProject;
 use DockerCi\DockerCi\Business\Ci\Steps\PrepareWorkdir;
+use DockerCi\DockerCi\Business\Ci\Steps\PullProject;
 use DockerCi\StepEngine\Business\Step\StepCollection;
 use Xervice\Core\Dependency\DependencyProviderInterface;
 use Xervice\Core\Dependency\Provider\AbstractProvider;
@@ -65,7 +66,8 @@ class DockerCiDependencyProvider extends AbstractProvider
     {
         return [
             new PrepareWorkdir(),
-            new CloneProject()
+            new CloneProject(),
+            new PullProject()
         ];
     }
 }
