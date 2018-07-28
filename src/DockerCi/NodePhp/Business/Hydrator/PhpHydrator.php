@@ -7,7 +7,7 @@ namespace DockerCi\NodePhp\Business\Hydrator;
 
 use DataProvider\NodeDataProvider;
 use DataProvider\PhpConfigDataProvider;
-use DockerCi\DockerConfig\Business\Exception\ConfigException;
+use Xervice\YamlConfig\Business\Exception\ConfigException;
 
 class PhpHydrator implements PhpHydratorInterface
 {
@@ -37,7 +37,7 @@ class PhpHydrator implements PhpHydratorInterface
 
     /**
      * @return \DataProvider\NodeDataProvider
-     * @throws \DockerCi\DockerConfig\Business\Exception\ConfigException
+     * @throws \Xervice\YamlConfig\Business\Exception\ConfigException
      */
     public function hydrate(): NodeDataProvider
     {
@@ -59,7 +59,7 @@ class PhpHydrator implements PhpHydratorInterface
     }
 
     /**
-     * @throws \DockerCi\DockerConfig\Business\Exception\ConfigException
+     * @throws \Xervice\YamlConfig\Business\Exception\ConfigException
      */
     private function validateConfig(): void
     {

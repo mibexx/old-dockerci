@@ -2,7 +2,7 @@
 namespace DockerCiTest\Git\Business\Git;
 
 use DockerCi\Git\Business\Git\GitShell;
-use DockerCi\Shell\ShellFacade;
+use Xervice\Shell\ShellFacade;
 
 class GitShellTest extends \Codeception\Test\Unit
 {
@@ -30,7 +30,7 @@ class GitShellTest extends \Codeception\Test\Unit
     }
 
     /**
-     * @return \DockerCi\Shell\ShellFacade
+     * @return \Xervice\Shell\ShellFacade
      */
     private function getShellFacade(): ShellFacade
     {

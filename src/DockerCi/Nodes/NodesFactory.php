@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace DockerCi\Nodes;
 
 
-use DataProvider\DockerConfigDataProvider;
+use DataProvider\YamlConfigDataProvider;
 use DockerCi\Nodes\Business\Hydrator\Collector\NodeHydratorCollection;
 use DockerCi\Nodes\Business\Hydrator\NodeHydrator;
 use Xervice\Core\Factory\AbstractFactory;
@@ -15,7 +15,7 @@ use Xervice\Core\Factory\AbstractFactory;
  */
 class NodesFactory extends AbstractFactory
 {
-    public function createNodeHydrator(array $data, DockerConfigDataProvider $nodeDataProvider)
+    public function createNodeHydrator(array $data, YamlConfigDataProvider $nodeDataProvider)
     {
         return new NodeHydrator(
             $data,

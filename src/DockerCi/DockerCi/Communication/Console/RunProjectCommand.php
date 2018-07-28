@@ -38,7 +38,7 @@ class RunProjectCommand extends AbstractDockerCiCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->initDatabase();
+        $this->initApplication();
 
         $project = $this->createProjectDataProvider($input);
 

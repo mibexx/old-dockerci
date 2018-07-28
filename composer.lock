@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c0e33eac32c2bbb8f77bcd39f5c9227",
+    "content-hash": "98414be77f310a8213e94f23d7e201f7",
     "packages": [
         {
             "name": "nette/php-generator",
@@ -149,6 +149,77 @@
                 "validation"
             ],
             "time": "2018-05-02T17:16:08+00:00"
+        },
+        {
+            "name": "php-amqplib/php-amqplib",
+            "version": "v2.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-amqplib/php-amqplib.git",
+                "reference": "dfd3694a86f1a7394d3693485259d4074a6ec79b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-amqplib/php-amqplib/zipball/dfd3694a86f1a7394d3693485259d4074a6ec79b",
+                "reference": "dfd3694a86f1a7394d3693485259d4074a6ec79b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-bcmath": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.3.0"
+            },
+            "replace": {
+                "videlalvaro/php-amqplib": "self.version"
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "^2.9",
+                "phpunit/phpunit": "^4.8",
+                "scrutinizer/ocular": "^1.1",
+                "squizlabs/php_codesniffer": "^2.5"
+            },
+            "suggest": {
+                "ext-sockets": "Use AMQPSocketConnection"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpAmqpLib\\": "PhpAmqpLib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Alvaro Videla",
+                    "role": "Original Maintainer"
+                },
+                {
+                    "name": "John Kelly",
+                    "email": "johnmkelly86@gmail.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Raúl Araya",
+                    "email": "nubeiro@gmail.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Formerly videlalvaro/php-amqplib.  This library is a pure PHP implementation of the AMQP protocol. It's been tested against RabbitMQ.",
+            "homepage": "https://github.com/php-amqplib/php-amqplib/",
+            "keywords": [
+                "message",
+                "queue",
+                "rabbitmq"
+            ],
+            "time": "2018-02-11T19:28:00+00:00"
         },
         {
             "name": "predis/predis",
@@ -313,7 +384,7 @@
         },
         {
             "name": "symfony/config",
-            "version": "v4.1.1",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
@@ -376,16 +447,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.0.12",
+            "version": "v4.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "1cc17d0e1cae585fb136976e1234de9d605e2e53"
+                "reference": "9f44418299c8b543a675ca6d2d6af5dbf40efd1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/1cc17d0e1cae585fb136976e1234de9d605e2e53",
-                "reference": "1cc17d0e1cae585fb136976e1234de9d605e2e53",
+                "url": "https://api.github.com/repos/symfony/console/zipball/9f44418299c8b543a675ca6d2d6af5dbf40efd1d",
+                "reference": "9f44418299c8b543a675ca6d2d6af5dbf40efd1d",
                 "shasum": ""
             },
             "require": {
@@ -440,11 +511,11 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2018-05-31T10:16:04+00:00"
+            "time": "2018-07-16T13:59:46+00:00"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.1.1",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -494,7 +565,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v4.1.1",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -543,16 +614,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v4.0.12",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "58cda545f0c89273a62669ec7ca3da1b7f404434"
+                "reference": "8da9ea68ab2d80dfabd41e0d14b9606bb47a10c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/58cda545f0c89273a62669ec7ca3da1b7f404434",
-                "reference": "58cda545f0c89273a62669ec7ca3da1b7f404434",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/8da9ea68ab2d80dfabd41e0d14b9606bb47a10c0",
+                "reference": "8da9ea68ab2d80dfabd41e0d14b9606bb47a10c0",
                 "shasum": ""
             },
             "require": {
@@ -560,12 +631,13 @@
                 "symfony/polyfill-mbstring": "~1.1"
             },
             "require-dev": {
+                "predis/predis": "~1.0",
                 "symfony/expression-language": "~3.4|~4.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "4.1-dev"
                 }
             },
             "autoload": {
@@ -592,7 +664,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2018-06-19T20:54:48+00:00"
+            "time": "2018-07-16T14:05:40+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -710,16 +782,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v4.1.1",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "b6d8164085ee0b6debcd1b7a131fd6f63bb04854"
+                "reference": "2dd74d6b2dcbd46a93971e6ce7d245cf3123e957"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/b6d8164085ee0b6debcd1b7a131fd6f63bb04854",
-                "reference": "b6d8164085ee0b6debcd1b7a131fd6f63bb04854",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/2dd74d6b2dcbd46a93971e6ce7d245cf3123e957",
+                "reference": "2dd74d6b2dcbd46a93971e6ce7d245cf3123e957",
                 "shasum": ""
             },
             "require": {
@@ -775,20 +847,20 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2018-06-22T08:59:39+00:00"
+            "time": "2018-07-23T08:20:20+00:00"
         },
         {
             "name": "symfony/validator",
-            "version": "v4.1.1",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "f2523bfd8dc5ff648aca55c0f2748674ca4661bb"
+                "reference": "d5f10cd4c6c0c00b0c01e3822b5d10144753bb24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/f2523bfd8dc5ff648aca55c0f2748674ca4661bb",
-                "reference": "f2523bfd8dc5ff648aca55c0f2748674ca4661bb",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/d5f10cd4c6c0c00b0c01e3822b5d10144753bb24",
+                "reference": "d5f10cd4c6c0c00b0c01e3822b5d10144753bb24",
                 "shasum": ""
             },
             "require": {
@@ -861,11 +933,11 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
-            "time": "2018-06-19T21:38:16+00:00"
+            "time": "2018-07-23T08:20:20+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.1.1",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
@@ -924,16 +996,16 @@
         },
         {
             "name": "xervice/config",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/config.git",
-                "reference": "5a4f88054dd8632bd19e67e68c227bd533b1e69e"
+                "reference": "b7f5447ab5e204438bd33776639c15e384dcd581"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/config/zipball/5a4f88054dd8632bd19e67e68c227bd533b1e69e",
-                "reference": "5a4f88054dd8632bd19e67e68c227bd533b1e69e",
+                "url": "https://api.github.com/repos/xervice/config/zipball/b7f5447ab5e204438bd33776639c15e384dcd581",
+                "reference": "b7f5447ab5e204438bd33776639c15e384dcd581",
                 "shasum": ""
             },
             "require-dev": {
@@ -960,25 +1032,25 @@
                 }
             ],
             "description": "Config environment to xervice components",
-            "time": "2018-07-13T18:15:54+00:00"
+            "time": "2018-07-24T14:43:38+00:00"
         },
         {
             "name": "xervice/console",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/console.git",
-                "reference": "78db7bb89118bfc71eff5093f0c2893f352b4f10"
+                "reference": "e672e8d7383c183b5d662283046b4968e104b495"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/console/zipball/78db7bb89118bfc71eff5093f0c2893f352b4f10",
-                "reference": "78db7bb89118bfc71eff5093f0c2893f352b4f10",
+                "url": "https://api.github.com/repos/xervice/console/zipball/e672e8d7383c183b5d662283046b4968e104b495",
+                "reference": "e672e8d7383c183b5d662283046b4968e104b495",
                 "shasum": ""
             },
             "require": {
                 "symfony/console": "4.0.*",
-                "xervice/core": "^2.0.1"
+                "xervice/core": "^3.0.0"
             },
             "require-dev": {
                 "codeception/codeception": "*",
@@ -1006,20 +1078,20 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-07-13T19:24:36+00:00"
+            "time": "2018-07-25T08:33:39+00:00"
         },
         {
             "name": "xervice/core",
-            "version": "2.0.2",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/core.git",
-                "reference": "0bd3f55445db935a378ac336edb330197a1a6c72"
+                "reference": "cbd878aba68523144088eb09f570eb397106672b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/core/zipball/0bd3f55445db935a378ac336edb330197a1a6c72",
-                "reference": "0bd3f55445db935a378ac336edb330197a1a6c72",
+                "url": "https://api.github.com/repos/xervice/core/zipball/cbd878aba68523144088eb09f570eb397106672b",
+                "reference": "cbd878aba68523144088eb09f570eb397106672b",
                 "shasum": ""
             },
             "require": {
@@ -1033,7 +1105,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "XerviceTest\\": "src/Xervice"
+                    "XerviceTest\\": "tests/Xervice/"
                 },
                 "psr-0": {
                     "Test\\": "src/",
@@ -1051,20 +1123,20 @@
                 }
             ],
             "description": "Xervice core functionality",
-            "time": "2018-07-16T06:48:28+00:00"
+            "time": "2018-07-25T06:59:22+00:00"
         },
         {
             "name": "xervice/data-provider",
-            "version": "1.1.0",
+            "version": "1.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/data-provider.git",
-                "reference": "cc05b45c6252687aa64ed1ec150617c909c63763"
+                "reference": "b1782e77c076a513c0a014732cbda3b6804a2d88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/data-provider/zipball/cc05b45c6252687aa64ed1ec150617c909c63763",
-                "reference": "cc05b45c6252687aa64ed1ec150617c909c63763",
+                "url": "https://api.github.com/repos/xervice/data-provider/zipball/b1782e77c076a513c0a014732cbda3b6804a2d88",
+                "reference": "b1782e77c076a513c0a014732cbda3b6804a2d88",
                 "shasum": ""
             },
             "require": {
@@ -1097,26 +1169,27 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-07-13T19:53:23+00:00"
+            "time": "2018-07-26T08:27:53+00:00"
         },
         {
             "name": "xervice/database",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/database.git",
-                "reference": "87bf375228ef39ea7637ce791dca4a413cc56921"
+                "reference": "cb6c435aa306cd3103951f327638c3ea564d1417"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/database/zipball/87bf375228ef39ea7637ce791dca4a413cc56921",
-                "reference": "87bf375228ef39ea7637ce791dca4a413cc56921",
+                "url": "https://api.github.com/repos/xervice/database/zipball/cb6c435aa306cd3103951f327638c3ea564d1417",
+                "reference": "cb6c435aa306cd3103951f327638c3ea564d1417",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.0",
                 "propel/propel": "2.0.0-alpha8",
-                "xervice/data-provider": "^1.1.0"
+                "xervice/data-provider": "^1.1.0",
+                "xervice/kernel": "^1.0.0"
             },
             "require-dev": {
                 "codeception/codeception": "*",
@@ -1143,26 +1216,297 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-07-15T12:01:16+00:00"
+            "time": "2018-07-22T16:53:55+00:00"
         },
         {
-            "name": "xervice/redis",
-            "version": "1.1.0",
+            "name": "xervice/event",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/xervice/redis.git",
-                "reference": "35352beae6fadd816fac56865693522b7bbd68fa"
+                "url": "https://github.com/xervice/event.git",
+                "reference": "77f666b0c3315f0d8499f3ffa51e0cf37cea6840"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/redis/zipball/35352beae6fadd816fac56865693522b7bbd68fa",
-                "reference": "35352beae6fadd816fac56865693522b7bbd68fa",
+                "url": "https://api.github.com/repos/xervice/event/zipball/77f666b0c3315f0d8499f3ffa51e0cf37cea6840",
+                "reference": "77f666b0c3315f0d8499f3ffa51e0cf37cea6840",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0",
+                "xervice/data-provider": "^1.4.0",
+                "xervice/kernel": "^1.3.0"
+            },
+            "require-dev": {
+                "codeception/codeception": "*",
+                "symfony/var-dumper": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "XerviceTest\\": "tests/Xervice/",
+                    "DataProvider\\": "src/Generated/"
+                },
+                "psr-0": {
+                    "Xervice\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Bertram",
+                    "email": "contact@mibexx.de"
+                }
+            ],
+            "time": "2018-07-27T17:48:40+00:00"
+        },
+        {
+            "name": "xervice/event-rabbitmq",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xervice/event-rabbitmq.git",
+                "reference": "738f6f1d4f8a29fd11da78c8b36ecf67f31806b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xervice/event-rabbitmq/zipball/738f6f1d4f8a29fd11da78c8b36ecf67f31806b9",
+                "reference": "738f6f1d4f8a29fd11da78c8b36ecf67f31806b9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0",
+                "xervice/data-provider": "^1.4.4",
+                "xervice/event": "^2.1.0",
+                "xervice/rabbitmq": "^2.0.0"
+            },
+            "require-dev": {
+                "codeception/codeception": "*",
+                "symfony/var-dumper": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "XerviceTest\\": "tests/Xervice/",
+                    "DataProvider\\": "src/Generated/"
+                },
+                "psr-0": {
+                    "Xervice\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Bertram",
+                    "email": "contact@mibexx.de"
+                }
+            ],
+            "time": "2018-07-28T12:39:31+00:00"
+        },
+        {
+            "name": "xervice/kernel",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xervice/kernel.git",
+                "reference": "de3cb7584866e2806e24134eca36defdde173473"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xervice/kernel/zipball/de3cb7584866e2806e24134eca36defdde173473",
+                "reference": "de3cb7584866e2806e24134eca36defdde173473",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0",
+                "xervice/core": "^3.0.0"
+            },
+            "require-dev": {
+                "codeception/codeception": "*",
+                "symfony/var-dumper": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "XerviceTest\\": "tests/Xervice/"
+                },
+                "psr-0": {
+                    "Xervice\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Bertram",
+                    "email": "contact@mibexx.de"
+                }
+            ],
+            "time": "2018-07-25T12:20:49+00:00"
+        },
+        {
+            "name": "xervice/log-rabbitmq",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xervice/log-rabbitmq.git",
+                "reference": "b49d6f0a62a75a29db0facddad0a2868354ec66b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xervice/log-rabbitmq/zipball/b49d6f0a62a75a29db0facddad0a2868354ec66b",
+                "reference": "b49d6f0a62a75a29db0facddad0a2868354ec66b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0",
+                "xervice/data-provider": "^1.4.4",
+                "xervice/logger": "^1.0.0",
+                "xervice/rabbitmq": "^2.0.0"
+            },
+            "require-dev": {
+                "codeception/codeception": "*",
+                "symfony/var-dumper": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "XerviceTest\\": "tests/Xervice/",
+                    "DataProvider\\": "src/Generated/"
+                },
+                "psr-0": {
+                    "Xervice\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Bertram",
+                    "email": "contact@mibexx.de"
+                }
+            ],
+            "time": "2018-07-28T13:07:19+00:00"
+        },
+        {
+            "name": "xervice/logger",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xervice/logger.git",
+                "reference": "67b70b1d602d0062b7ec02b2e62cfaee5e76e6b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xervice/logger/zipball/67b70b1d602d0062b7ec02b2e62cfaee5e76e6b4",
+                "reference": "67b70b1d602d0062b7ec02b2e62cfaee5e76e6b4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0",
+                "xervice/data-provider": "^1.1.0"
+            },
+            "require-dev": {
+                "codeception/codeception": "*",
+                "symfony/var-dumper": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "XerviceTest\\": "tests/Xervice/",
+                    "DataProvider\\": "src/Generated/"
+                },
+                "psr-0": {
+                    "Xervice\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Bertram",
+                    "email": "contact@mibexx.de"
+                }
+            ],
+            "time": "2018-07-23T17:19:50+00:00"
+        },
+        {
+            "name": "xervice/rabbitmq",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xervice/rabbitmq.git",
+                "reference": "82b04500b2ddfdecca52eb788c84517c544c40ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xervice/rabbitmq/zipball/82b04500b2ddfdecca52eb788c84517c544c40ab",
+                "reference": "82b04500b2ddfdecca52eb788c84517c544c40ab",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0",
+                "php-amqplib/php-amqplib": "^2.7.2",
+                "xervice/data-provider": "^1.4.4",
+                "xervice/kernel": "^1.3.0"
+            },
+            "require-dev": {
+                "codeception/codeception": "*",
+                "symfony/var-dumper": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "XerviceTest\\": "tests/Xervice/",
+                    "DataProvider\\": "src/Generated/"
+                },
+                "psr-0": {
+                    "Xervice\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Bertram",
+                    "email": "contact@mibexx.de"
+                }
+            ],
+            "time": "2018-07-28T12:30:57+00:00"
+        },
+        {
+            "name": "xervice/redis",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xervice/redis.git",
+                "reference": "dae0f186d546ac45e8e77e01448f371db4433a02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xervice/redis/zipball/dae0f186d546ac45e8e77e01448f371db4433a02",
+                "reference": "dae0f186d546ac45e8e77e01448f371db4433a02",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.0",
                 "predis/predis": "^1.1.0",
                 "xervice/data-provider": "^1.1.0",
+                "xervice/kernel": "^1.0.0",
                 "xervice/session": "^1.1.0"
             },
             "require-dev": {
@@ -1189,26 +1533,114 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-07-14T06:57:23+00:00"
+            "time": "2018-07-22T16:50:01+00:00"
         },
         {
             "name": "xervice/session",
-            "version": "1.1.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/session.git",
-                "reference": "25e62f009dee23ab12400d2a2feeae2044d7a797"
+                "reference": "a7ae257bc4399e73e9b9b06bdfd8526636743228"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/session/zipball/25e62f009dee23ab12400d2a2feeae2044d7a797",
-                "reference": "25e62f009dee23ab12400d2a2feeae2044d7a797",
+                "url": "https://api.github.com/repos/xervice/session/zipball/a7ae257bc4399e73e9b9b06bdfd8526636743228",
+                "reference": "a7ae257bc4399e73e9b9b06bdfd8526636743228",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.0",
-                "symfony/http-foundation": "4.0.*",
-                "xervice/core": "^2.0.0"
+                "symfony/http-foundation": "^4.0.0",
+                "xervice/kernel": "^1.0.0"
+            },
+            "require-dev": {
+                "codeception/codeception": "*",
+                "symfony/var-dumper": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "XerviceTest\\": "tests/Xervice/"
+                },
+                "psr-0": {
+                    "Xervice\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Bertram",
+                    "email": "contact@mibexx.de"
+                }
+            ],
+            "time": "2018-07-23T09:47:40+00:00"
+        },
+        {
+            "name": "xervice/shell",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xervice/shell.git",
+                "reference": "3aaf005a97227fc6ba748198bb496bd3d40cfae2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xervice/shell/zipball/3aaf005a97227fc6ba748198bb496bd3d40cfae2",
+                "reference": "3aaf005a97227fc6ba748198bb496bd3d40cfae2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0",
+                "xervice/core": "^3.0.0"
+            },
+            "require-dev": {
+                "codeception/codeception": "*",
+                "symfony/var-dumper": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "XerviceTest\\": "tests/Xervice/",
+                    "DataProvider\\": "src/Generated/"
+                },
+                "psr-0": {
+                    "Xervice\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Author name",
+                    "email": "author@email.de"
+                }
+            ],
+            "time": "2018-07-28T15:42:24+00:00"
+        },
+        {
+            "name": "xervice/yaml-config",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xervice/yaml-config.git",
+                "reference": "0dfff2630b96c0d2001f45c9591486a6e3972ce6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xervice/yaml-config/zipball/0dfff2630b96c0d2001f45c9591486a6e3972ce6",
+                "reference": "0dfff2630b96c0d2001f45c9591486a6e3972ce6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0",
+                "symfony/yaml": "^4.1.1",
+                "xervice/data-provider": "^1.4.4"
             },
             "require-dev": {
                 "codeception/codeception": "*",
@@ -1234,7 +1666,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-07-14T04:26:49+00:00"
+            "time": "2018-07-28T19:00:05+00:00"
         }
     ],
     "packages-dev": [
@@ -1299,16 +1731,16 @@
         },
         {
             "name": "codeception/codeception",
-            "version": "2.4.3",
+            "version": "2.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Codeception.git",
-                "reference": "13b2db0d54068afaabf3ca8ac8b6591d69018f46"
+                "reference": "2060fc1fe8ac2823ff3b8ece04616fc12aca968a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/13b2db0d54068afaabf3ca8ac8b6591d69018f46",
-                "reference": "13b2db0d54068afaabf3ca8ac8b6591d69018f46",
+                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/2060fc1fe8ac2823ff3b8ece04616fc12aca968a",
+                "reference": "2060fc1fe8ac2823ff3b8ece04616fc12aca968a",
                 "shasum": ""
             },
             "require": {
@@ -1386,7 +1818,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2018-06-26T14:09:28+00:00"
+            "time": "2018-07-16T08:14:50+00:00"
         },
         {
             "name": "codeception/phpunit-wrapper",
@@ -1433,16 +1865,16 @@
         },
         {
             "name": "codeception/stub",
-            "version": "2.0.1",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Stub.git",
-                "reference": "b2eff325d8ff0b824ff659048be7be4e5767d7d0"
+                "reference": "5fe83b0a22dc1f28b811c517862e747bdb1a4139"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Stub/zipball/b2eff325d8ff0b824ff659048be7be4e5767d7d0",
-                "reference": "b2eff325d8ff0b824ff659048be7be4e5767d7d0",
+                "url": "https://api.github.com/repos/Codeception/Stub/zipball/5fe83b0a22dc1f28b811c517862e747bdb1a4139",
+                "reference": "5fe83b0a22dc1f28b811c517862e747bdb1a4139",
                 "shasum": ""
             },
             "require": {
@@ -1462,7 +1894,7 @@
                 "MIT"
             ],
             "description": "Flexible Stub wrapper for PHPUnit's Mock Builder",
-            "time": "2018-05-18T14:33:08+00:00"
+            "time": "2018-07-24T17:06:30+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -3279,16 +3711,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.3.0",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "d86873af43b4aa9d1f39a3601cc0cfcf02b25266"
+                "reference": "628a481780561150481a9ec74709092b9759b3ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/d86873af43b4aa9d1f39a3601cc0cfcf02b25266",
-                "reference": "d86873af43b4aa9d1f39a3601cc0cfcf02b25266",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/628a481780561150481a9ec74709092b9759b3ec",
+                "reference": "628a481780561150481a9ec74709092b9759b3ec",
                 "shasum": ""
             },
             "require": {
@@ -3326,11 +3758,11 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-06-06T23:58:19+00:00"
+            "time": "2018-07-26T23:47:18+00:00"
         },
         {
             "name": "symfony/browser-kit",
-            "version": "v4.1.1",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/browser-kit.git",
@@ -3387,7 +3819,7 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v4.1.1",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
@@ -3440,16 +3872,16 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v4.1.1",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "e761828a85d7dfc00b927f94ccbe1851ce0b6535"
+                "reference": "62912ab79facdbdaa0849f6c2fe4734b7b60f5cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/e761828a85d7dfc00b927f94ccbe1851ce0b6535",
-                "reference": "e761828a85d7dfc00b927f94ccbe1851ce0b6535",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/62912ab79facdbdaa0849f6c2fe4734b7b60f5cc",
+                "reference": "62912ab79facdbdaa0849f6c2fe4734b7b60f5cc",
                 "shasum": ""
             },
             "require": {
@@ -3507,20 +3939,20 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2018-06-25T11:12:43+00:00"
+            "time": "2018-07-16T14:05:40+00:00"
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v4.1.1",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "3350cacf151b48d903114ab8f7a4ccb23e07e10a"
+                "reference": "eb501fa8aab8c8e2db790d8d0f945697769f6c41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/3350cacf151b48d903114ab8f7a4ccb23e07e10a",
-                "reference": "3350cacf151b48d903114ab8f7a4ccb23e07e10a",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/eb501fa8aab8c8e2db790d8d0f945697769f6c41",
+                "reference": "eb501fa8aab8c8e2db790d8d0f945697769f6c41",
                 "shasum": ""
             },
             "require": {
@@ -3564,20 +3996,20 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
-            "time": "2018-05-01T23:02:13+00:00"
+            "time": "2018-07-05T11:54:23+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v4.1.1",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "2391ed210a239868e7256eb6921b1bd83f3087b5"
+                "reference": "00d64638e4f0703a00ab7fc2c8ae5f75f3b4020f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/2391ed210a239868e7256eb6921b1bd83f3087b5",
-                "reference": "2391ed210a239868e7256eb6921b1bd83f3087b5",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/00d64638e4f0703a00ab7fc2c8ae5f75f3b4020f",
+                "reference": "00d64638e4f0703a00ab7fc2c8ae5f75f3b4020f",
                 "shasum": ""
             },
             "require": {
@@ -3627,7 +4059,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2018-04-06T07:35:57+00:00"
+            "time": "2018-07-10T11:02:47+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
@@ -3686,7 +4118,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.1.1",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -3735,16 +4167,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.1.1",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "b2eebaec085d1f2cafbad7644733d494a3bbbc9b"
+                "reference": "9f882aed43f364de1d43038e8fb39703c577afc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/b2eebaec085d1f2cafbad7644733d494a3bbbc9b",
-                "reference": "b2eebaec085d1f2cafbad7644733d494a3bbbc9b",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/9f882aed43f364de1d43038e8fb39703c577afc1",
+                "reference": "9f882aed43f364de1d43038e8fb39703c577afc1",
                 "shasum": ""
             },
             "require": {
@@ -3806,7 +4238,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2018-06-23T12:23:56+00:00"
+            "time": "2018-07-05T11:54:23+00:00"
         },
         {
             "name": "theseer/tokenizer",

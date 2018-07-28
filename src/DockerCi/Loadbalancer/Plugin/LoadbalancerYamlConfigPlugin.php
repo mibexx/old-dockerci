@@ -5,24 +5,24 @@ declare(strict_types=1);
 namespace DockerCi\Loadbalancer\Plugin;
 
 
-use DataProvider\DockerConfigDataProvider;
-use DockerCi\DockerConfig\Business\Hydrator\HydratorInterface;
+use DataProvider\YamlConfigDataProvider;
 use DockerCi\Loadbalancer\LoadbalancerConfig;
 use Xervice\Core\Locator\AbstractWithLocator;
+use Xervice\YamlConfig\Business\Hydrator\HydratorInterface;
 
 /**
  * @method \DockerCi\Loadbalancer\LoadbalancerFactory getFactory()
  */
-class LoadbalancerDockerConfigPlugin extends AbstractWithLocator implements HydratorInterface
+class LoadbalancerYamlConfigPlugin extends AbstractWithLocator implements HydratorInterface
 {
     /**
      * @param array $data
-     * @param \DataProvider\DockerConfigDataProvider $dataProvider
+     * @param \DataProvider\YamlConfigDataProvider $dataProvider
      *
-     * @return \DataProvider\DockerConfigDataProvider
+     * @return \DataProvider\YamlConfigDataProvider
      * @throws \Core\Locator\Dynamic\ServiceNotParseable
      */
-    public function hydrateConfig(array $data, DockerConfigDataProvider $dataProvider): DockerConfigDataProvider
+    public function hydrateConfig(array $data, YamlConfigDataProvider $dataProvider): YamlConfigDataProvider
     {
         if (isset($data[LoadbalancerConfig::CONFIG_NAME])) {
             $dataProvider = $this->getFactory()->createLoadbalancerHydrator(
@@ -33,5 +33,4 @@ class LoadbalancerDockerConfigPlugin extends AbstractWithLocator implements Hydr
 
         return $dataProvider;
     }
-
 }

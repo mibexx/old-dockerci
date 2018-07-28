@@ -16,7 +16,7 @@ use DockerCi\DockerCi\Business\Project\Hydrator\ProjectHydratorInterface;
 use DockerCi\DockerCi\Business\Project\Persistor\ProjectWriter;
 use DockerCi\DockerCi\Business\Project\Persistor\ProjectWriterInterface;
 use DockerCi\Git\GitClient;
-use DockerCi\Shell\ShellFacade;
+use Xervice\Shell\ShellFacade;
 use DockerCi\StepEngine\Business\Step\StepCollection;
 use DockerCi\StepEngine\StepEngineFacade;
 use Orm\Xervice\DockerCi\Persistence\ProjectQuery;
@@ -90,7 +90,7 @@ class DockerCiFactory extends AbstractFactory
     }
 
     /**
-     * @return \DockerCi\Shell\ShellFacade
+     * @return \Xervice\Shell\ShellFacade
      */
     public function getShellFacade(): ShellFacade
     {

@@ -44,7 +44,7 @@ class AddProjectCommand extends AbstractDockerCiCommand
         $project->setRepository($input->getArgument('repository'));
 
         try {
-            $this->initDatabase();
+            $this->initApplication();
             $this->getFacade()->addProject($project);
         } catch (\Exception $e) {
             $this->getFactory()->getExceptionHandlerFacade()->handleException($e);

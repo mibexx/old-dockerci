@@ -1,9 +1,10 @@
 <?php
 namespace DockerCiTest\NodePhp;
 
-use DataProvider\DockerConfigFileDataProvider;
-use DataProvider\DockerConfigFileListDataProvider;
+use DataProvider\YamlConfigFileDataProvider;
+use DataProvider\YamlConfigFileListDataProvider;
 use Xervice\Core\Locator\Locator;
+use Xervice\YamlConfig\YamlConfigFacade;
 
 class IntegrationTest extends \Codeception\Test\Unit
 {
@@ -11,12 +12,12 @@ class IntegrationTest extends \Codeception\Test\Unit
      * @group DockerCi
      * @group Loadbalancer
      * @group Integration
-     * @throws \DockerCi\DockerConfig\Business\Exception\ConfigException
+     * @throws \Xervice\YamlConfig\Business\Exception\ConfigException
      */
     public function testNodePhpConfig()
     {
-        $facade = $this->getDockerConfigFacade();
-        $config = $facade->getDockerConfig(
+        $facade = $this->getYamlConfigFacade();
+        $config = $facade->getYamlConfig(
             $this->getExampleFile()
         );
 
@@ -50,34 +51,34 @@ class IntegrationTest extends \Codeception\Test\Unit
      * @group DockerCi
      * @group Loadbalancer
      * @group Integration
-     * @throws \DockerCi\DockerConfig\Business\Exception\ConfigException
+     * @throws \Xervice\YamlConfig\Business\Exception\ConfigException
      *
-     * @expectedException \DockerCi\DockerConfig\Business\Exception\ConfigException
+     * @expectedException \Xervice\YamlConfig\Business\Exception\ConfigException
      */
     public function testNodePhpConfigFail()
     {
-        $facade = $this->getDockerConfigFacade();
-        $facade->getDockerConfig(
+        $facade = $this->getYamlConfigFacade();
+        $facade->getYamlConfig(
             $this->getFailFile()
         );
     }
 
     /**
-     * @return \DockerCi\DockerConfig\DockerConfigFacade
+     * @return \DockerCi\YamlConfig\YamlConfigFacade
      */
-    private function getDockerConfigFacade()
+    private function getYamlConfigFacade(): YamlConfigFacade
     {
-        return Locator::getInstance()->dockerConfig()->facade();
+        return Locator::getInstance()->yamlConfig()->facade();
     }
 
     /**
-     * @return \DataProvider\DockerConfigFileListDataProvider
+     * @return \DataProvider\YamlConfigFileListDataProvider
      */
     private function getExampleFile()
     {
-        $fileList = new DockerConfigFileListDataProvider();
+        $fileList = new YamlConfigFileListDataProvider();
 
-        $file = new DockerConfigFileDataProvider();
+        $file = new YamlConfigFileDataProvider();
         $file->setPath(__DIR__ . '/data/example.yml');
 
         $fileList->addFile($file);
@@ -86,13 +87,13 @@ class IntegrationTest extends \Codeception\Test\Unit
     }
 
     /**
-     * @return \DataProvider\DockerConfigFileListDataProvider
+     * @return \DataProvider\YamlConfigFileListDataProvider
      */
     private function getFailFile()
     {
-        $fileList = new DockerConfigFileListDataProvider();
+        $fileList = new YamlConfigFileListDataProvider();
 
-        $file = new DockerConfigFileDataProvider();
+        $file = new YamlConfigFileDataProvider();
         $file->setPath(__DIR__ . '/data/fail.yml');
 
         $fileList->addFile($file);

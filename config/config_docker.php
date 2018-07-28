@@ -2,6 +2,7 @@
 
 use Xervice\Database\DatabaseConfig;
 use Xervice\ExceptionHandler\ExceptionHandlerConfig;
+use Xervice\RabbitMQ\RabbitMQConfig;
 use Xervice\Redis\RedisConfig;
 
 $config[ExceptionHandlerConfig::IS_DEBUG] = true;
@@ -16,3 +17,5 @@ $config[DatabaseConfig::PROPEL_CONF_PORT] = '15432';
 $config[DatabaseConfig::PROPEL_CONF_DBNAME] = 'dockerci';
 $config[DatabaseConfig::PROPEL_CONF_USER] = 'dockerci';
 $config[DatabaseConfig::PROPEL_CONF_PASSWORD] = 'dockerci';
+
+$config[RabbitMQConfig::CONNECTION_PASSWORD] = 'guest';

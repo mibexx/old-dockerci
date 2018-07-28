@@ -7,7 +7,7 @@ namespace DockerCi\Docker;
 
 use DockerCi\Docker\Business\Shell\DockerShell;
 use DockerCi\Docker\Business\Shell\DockerShellInterface;
-use DockerCi\Shell\ShellFacade;
+use Xervice\Shell\ShellFacade;
 use Xervice\Core\Factory\AbstractFactory;
 
 /**
@@ -27,7 +27,7 @@ class DockerFactory extends AbstractFactory
     }
     
     /**
-     * @return \DockerCi\Shell\ShellFacade
+     * @return \Xervice\Shell\ShellFacade
      */
     public function getShellFacade(): ShellFacade
     {

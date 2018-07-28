@@ -13,7 +13,7 @@ use DockerCi\Git\Business\Functions\GitReset;
 use DockerCi\Git\Business\Functions\GitResetInterface;
 use DockerCi\Git\Business\Git\GitShell;
 use DockerCi\Git\Business\Git\GitShellInterface;
-use DockerCi\Shell\ShellFacade;
+use Xervice\Shell\ShellFacade;
 use Xervice\Core\Factory\AbstractFactory;
 
 /**
@@ -63,7 +63,7 @@ class GitFactory extends AbstractFactory
     }
 
     /**
-     * @return \DockerCi\Shell\ShellFacade
+     * @return \Xervice\Shell\ShellFacade
      */
     public function getShellFacade(): ShellFacade
     {

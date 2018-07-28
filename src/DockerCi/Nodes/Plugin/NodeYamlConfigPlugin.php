@@ -5,24 +5,24 @@ declare(strict_types=1);
 namespace DockerCi\Nodes\Plugin;
 
 
-use DataProvider\DockerConfigDataProvider;
-use DockerCi\DockerConfig\Business\Hydrator\HydratorInterface;
+use DataProvider\YamlConfigDataProvider;
 use DockerCi\Nodes\NodesConfig;
 use Xervice\Core\Locator\AbstractWithLocator;
+use Xervice\YamlConfig\Business\Hydrator\HydratorInterface;
 
 /**
  * @method \DockerCi\Nodes\NodesFactory getFactory()
  */
-class NodeDockerConfigPlugin extends AbstractWithLocator implements HydratorInterface
+class NodeYamlConfigPlugin extends AbstractWithLocator implements HydratorInterface
 {
     /**
      * @param array $data
-     * @param \DataProvider\DockerConfigDataProvider $dataProvider
+     * @param \DataProvider\YamlConfigDataProvider $dataProvider
      *
-     * @return \DataProvider\DockerConfigDataProvider
+     * @return \DataProvider\YamlConfigDataProvider
      * @throws \Core\Locator\Dynamic\ServiceNotParseable
      */
-    public function hydrateConfig(array $data, DockerConfigDataProvider $dataProvider): DockerConfigDataProvider
+    public function hydrateConfig(array $data, YamlConfigDataProvider $dataProvider): YamlConfigDataProvider
     {
         if (isset($data[NodesConfig::CONFIG_NAME])) {
             $this->getFactory()->createNodeHydrator(
@@ -33,5 +33,4 @@ class NodeDockerConfigPlugin extends AbstractWithLocator implements HydratorInte
 
         return $dataProvider;
     }
-
 }

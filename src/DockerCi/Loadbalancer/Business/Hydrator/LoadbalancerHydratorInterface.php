@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 namespace DockerCi\Loadbalancer\Business\Hydrator;
 
-use DataProvider\DockerConfigDataProvider;
+use DataProvider\YamlConfigDataProvider;
 
 interface LoadbalancerHydratorInterface
 {
     /**
-     * @return \DataProvider\DockerConfigDataProvider
+     * @return \DataProvider\YamlConfigDataProvider
      */
-    public function hydrate(): DockerConfigDataProvider;
+    public function hydrate(): YamlConfigDataProvider;
 }

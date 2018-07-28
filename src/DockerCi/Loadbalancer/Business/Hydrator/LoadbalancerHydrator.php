@@ -1,13 +1,11 @@
 <?php
 declare(strict_types=1);
 
-
 namespace DockerCi\Loadbalancer\Business\Hydrator;
 
-
-use DataProvider\DockerConfigDataProvider;
 use DataProvider\LoadbalancerDataProvider;
 use DataProvider\LoadBalancerEntryDataProvider;
+use DataProvider\YamlConfigDataProvider;
 
 class LoadbalancerHydrator implements LoadbalancerHydratorInterface
 {
@@ -17,7 +15,7 @@ class LoadbalancerHydrator implements LoadbalancerHydratorInterface
     private $data;
 
     /**
-     * @var \DataProvider\DockerConfigDataProvider
+     * @var \DataProvider\YamlConfigDataProvider
      */
     private $config;
 
@@ -25,18 +23,18 @@ class LoadbalancerHydrator implements LoadbalancerHydratorInterface
      * LoadbalancerHydrator constructor.
      *
      * @param array $data
-     * @param \DataProvider\DockerConfigDataProvider $config
+     * @param \DataProvider\YamlConfigDataProvider $config
      */
-    public function __construct(array $data, DockerConfigDataProvider $config)
+    public function __construct(array $data, YamlConfigDataProvider $config)
     {
         $this->data = $data;
         $this->config = $config;
     }
 
     /**
-     * @return \DataProvider\DockerConfigDataProvider
+     * @return \DataProvider\YamlConfigDataProvider
      */
-    public function hydrate(): DockerConfigDataProvider
+    public function hydrate(): YamlConfigDataProvider
     {
         $loadbalancerList = new LoadbalancerDataProvider();
 

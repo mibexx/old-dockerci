@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace DockerCi\Nodes\Business\Hydrator;
 
 
-use DataProvider\DockerConfigDataProvider;
 use DataProvider\NodeDataProvider;
+use DataProvider\YamlConfigDataProvider;
 use DockerCi\Nodes\Business\Hydrator\Collector\NodeHydratorCollection;
 
 class NodeHydrator
@@ -17,7 +17,7 @@ class NodeHydrator
     private $data;
 
     /**
-     * @var \DataProvider\DockerConfigDataProvider
+     * @var \DataProvider\YamlConfigDataProvider
      */
     private $config;
 
@@ -30,12 +30,12 @@ class NodeHydrator
      * NodeHydrator constructor.
      *
      * @param array $data
-     * @param \DataProvider\DockerConfigDataProvider $config
+     * @param \DataProvider\YamlConfigDataProvider $config
      * @param \DockerCi\Nodes\Business\Hydrator\Collector\NodeHydratorCollection $nodeHydratorCollection
      */
     public function __construct(
         array $data,
-        DockerConfigDataProvider $config,
+        YamlConfigDataProvider $config,
         NodeHydratorCollection $nodeHydratorCollection
     ) {
         $this->data = $data;
@@ -44,9 +44,9 @@ class NodeHydrator
     }
 
     /**
-     * @return \DataProvider\DockerConfigDataProvider
+     * @return \DataProvider\YamlConfigDataProvider
      */
-    public function hydrate(): DockerConfigDataProvider
+    public function hydrate(): YamlConfigDataProvider
     {
         foreach ($this->data as $name => $nodeConfig) {
             $node = new NodeDataProvider();

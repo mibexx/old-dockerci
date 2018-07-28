@@ -16,9 +16,14 @@
   },
   "require": {
     "php": ">=7.1.0",
-    "xervice/data-provider": "^1.1.0",
+    "xervice/data-provider": "^1.4.4",
+    "xervice/kernel": "^1.1.0",
     "xervice/database": "^1.1.0",
     "xervice/redis": "^1.1.0",
+    "xervice/log-rabbitmq": "^1.0.0",
+    "xervice/event-rabbitmq": "^1.1.0",
+    "xervice/shell": "^1.0.0",
+    "xervice/yaml-config": "^1.0.0",
     "symfony/yaml": "^4.1.1",
     "propel/propel": "2.0.0-alpha8"
   },

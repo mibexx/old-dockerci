@@ -11,7 +11,7 @@
     </DataProvider>
 
 
-    <DataProvider name="DockerConfig">
+    <DataProvider name="YamlConfig">
         <DataElement name="Nodes" singleton="Node" type="Node[]"/>
     </DataProvider>
 

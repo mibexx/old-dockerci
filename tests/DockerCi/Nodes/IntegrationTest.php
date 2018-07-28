@@ -1,9 +1,10 @@
 <?php
 namespace DockerCiTest\Nodes;
 
-use DataProvider\DockerConfigFileDataProvider;
-use DataProvider\DockerConfigFileListDataProvider;
+use DataProvider\YamlConfigFileDataProvider;
+use DataProvider\YamlConfigFileListDataProvider;
 use Xervice\Core\Locator\Locator;
+use Xervice\YamlConfig\YamlConfigFacade;
 
 class IntegrationTest extends \Codeception\Test\Unit
 {
@@ -14,8 +15,8 @@ class IntegrationTest extends \Codeception\Test\Unit
      */
     public function testNodeConfig()
     {
-        $facade = $this->getDockerConfigFacade();
-        $config = $facade->getDockerConfig(
+        $facade = $this->getYamlConfigFacade();
+        $config = $facade->getYamlConfig(
             $this->getExampleFile()
         );
 
@@ -31,21 +32,21 @@ class IntegrationTest extends \Codeception\Test\Unit
     }
 
     /**
-     * @return \DockerCi\DockerConfig\DockerConfigFacade
+     * @return \Xervice\YamlConfig\YamlConfigFacade
      */
-    private function getDockerConfigFacade()
+    private function getYamlConfigFacade(): YamlConfigFacade
     {
-        return Locator::getInstance()->dockerConfig()->facade();
+        return Locator::getInstance()->yamlConfig()->facade();
     }
 
     /**
-     * @return \DataProvider\DockerConfigFileListDataProvider
+     * @return \DataProvider\YamlConfigFileListDataProvider
      */
     private function getExampleFile()
     {
-        $fileList = new DockerConfigFileListDataProvider();
+        $fileList = new YamlConfigFileListDataProvider();
 
-        $file = new DockerConfigFileDataProvider();
+        $file = new YamlConfigFileDataProvider();
         $file->setPath(__DIR__ . '/data/example.yml');
 
         $fileList->addFile($file);

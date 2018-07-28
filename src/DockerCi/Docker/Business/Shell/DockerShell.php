@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace DockerCi\Docker\Business\Shell;
 
 
-use DockerCi\Shell\ShellFacade;
+use Xervice\Shell\ShellFacade;
 
 class DockerShell implements DockerShellInterface
 {
     /**
-     * @var \DockerCi\Shell\ShellFacade
+     * @var \Xervice\Shell\ShellFacade
      */
     private $shellFacade;
 
@@ -22,7 +22,7 @@ class DockerShell implements DockerShellInterface
     /**
      * DockerShell constructor.
      *
-     * @param \DockerCi\Shell\ShellFacade $shellFacade
+     * @param \Xervice\Shell\ShellFacade $shellFacade
      * @param string $dockerCommand
      */
     public function __construct(ShellFacade $shellFacade, string $dockerCommand)

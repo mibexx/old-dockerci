@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace DockerCi\Git\Business\Git;
 
 
-use DockerCi\Shell\ShellFacade;
+use Xervice\Shell\ShellFacade;
 
 class GitShell implements GitShellInterface
 {
     /**
-     * @var \DockerCi\Shell\ShellFacade
+     * @var \Xervice\Shell\ShellFacade
      */
     private $shellFacade;
 
@@ -22,7 +22,7 @@ class GitShell implements GitShellInterface
     /**
      * GitShell constructor.
      *
-     * @param \DockerCi\Shell\ShellFacade $shellFacade
+     * @param \Xervice\Shell\ShellFacade $shellFacade
      * @param string $gitCommand
      */
     public function __construct(

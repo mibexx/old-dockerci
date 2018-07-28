@@ -9,7 +9,7 @@ interface PhpHydratorInterface
 {
     /**
      * @return \DataProvider\NodeDataProvider
-     * @throws \DockerCi\DockerConfig\Business\Exception\ConfigException
+     * @throws \Xervice\YamlConfig\Business\Exception\ConfigException
      */
     public function hydrate(): NodeDataProvider;
 }

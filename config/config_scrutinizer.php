@@ -1,6 +1,7 @@
 <?php
 
 use Xervice\Database\DatabaseConfig;
+use Xervice\RabbitMQ\RabbitMQConfig;
 use Xervice\Redis\RedisConfig;
 
 $config[RedisConfig::REDIS_HOST] = '127.0.0.1';
@@ -13,3 +14,5 @@ $config[DatabaseConfig::PROPEL_CONF_PORT] = '5432';
 $config[DatabaseConfig::PROPEL_CONF_DBNAME] = 'dockerci';
 $config[DatabaseConfig::PROPEL_CONF_USER] = 'scrutinizer';
 $config[DatabaseConfig::PROPEL_CONF_PASSWORD] = 'scrutinizer';
+
+$config[RabbitMQConfig::CONNECTION_PASSWORD] = 'guest';

@@ -15,7 +15,7 @@
         <DataElement name="Target" type="string"/>
     </DataProvider>
 
-    <DataProvider name="DockerConfig">
+    <DataProvider name="YamlConfig">
         <DataElement name="Loadbalancer" type="Loadbalancer"/>
     </DataProvider>
 
